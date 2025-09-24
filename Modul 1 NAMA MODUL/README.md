@@ -15,7 +15,7 @@ aku mengerjakan perulangan
 
 ### Soal 1
 
-copy paste soal nomor 1 disini
+Buatlah program yang menerima inputan dua buah bilangan betipe float, kemudian memberikan outputan hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
 ```go
 package main
@@ -34,7 +34,8 @@ Penjelasan ttg kode kalian disini
 
 ### Soal 2
 
-soal nomor 2A
+Buatlah sebuah progam yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di input kan user adalah bilangan bulat positif mulai dari 0 s.d 100
+Contoh: 79: tujuh puluh sembilan
 
 ```go
 package main
@@ -50,7 +51,9 @@ penjelasan kode
 
 Kalau adalanjutan di lanjut disini aja
 
-soal nomor 2B
+### Soal 3
+
+Buatlah program yang dapat memberikan input dan ouput sbb.
 
 ```go
 package main
