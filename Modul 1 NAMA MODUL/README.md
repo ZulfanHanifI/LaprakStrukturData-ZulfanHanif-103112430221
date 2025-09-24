@@ -49,8 +49,6 @@ func main() {
 
 penjelasan kode
 
-Kalau adalanjutan di lanjut disini aja
-
 ### Soal 3
 
 Buatlah program yang dapat memberikan input dan ouput sbb.
