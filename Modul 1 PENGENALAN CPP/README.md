@@ -99,7 +99,6 @@ Contoh: 79: tujuh puluh sembilan
 #include <iostream>
 using namespace std;
 
-// Fungsi untuk mengubah angka menjadi kata
 string angkaKeTulisan(int n) {
     string satuan[] = {"", "satu", "dua", "tiga", "empat", "lima",
                        "enam", "tujuh", "delapan", "sembilan"};
@@ -147,18 +146,89 @@ int main() {
 ```
 
 > Output
+> ![Screenshot bagian x](output/ss2.png)
 
-penjelasan kode
+1. Array String satuan[], belasan[], dan puluhan[]
+
+satuan digunakan untuk angka 1–9.
+
+belasan untuk angka 10–19.
+
+puluhan untuk angka 20, 30, … sampai 90.
+
+2. Kasus Khusus (Boundary Case)
+
+Jika n == 0 → output "nol".
+
+Jika n == 100 → output "seratus".
+
+3. Jika Angka < 10
+Misalnya 7 → "tujuh".
+
+4. Jika Angka 10–19
+Misalnya 13 → "tiga belas".
+
+5. Jika Angka 20–99
+
+puluh = n / 10 → mengambil bagian puluhan.
+
+sisa = n % 10 → mengambil bagian satuan.
+
+Jika sisa == 0 → angka bulat puluhan, misalnya 40 → "empat puluh".
+
+Jika sisa != 0 → gabungan puluhan + satuan, misalnya 79 → "tujuh puluh sembilan".
+
+6. Validasi Input
+Program menolak angka di luar rentang 0–100.
 
 ### Soal 3
 
 Buatlah program yang dapat memberikan input dan ouput sbb.
+> Input: 3 
+>
+>  Output:
+>
+> 3  2  1 * 1  2  3
+>
+>    2  1 * 1  2
+>
+>       1 * 1
+>
+> 	      *
 
-```go
-package main
+```cpp
+#include <iostream>
+using namespace std;
 
-func main() {
-	fmt.Println("kode untuk soal nomor 2B")
+int main() {
+    int n;
+    cout << "Masukkan angka: ";
+    cin >> n;
+
+    for (int i = n; i >= 1; i--) {
+        for (int spasi = 0; spasi < n - i; spasi++) {
+            cout << "  ";
+        }
+
+        for (int kiri = i; kiri >= 1; kiri--) {
+            cout << kiri << " ";
+        }
+
+        cout << "* ";
+
+        for (int kanan = 1; kanan <= i; kanan++) {
+            cout << kanan << " ";
+        }
+
+        cout << endl;
+    }
+
+    for (int spasi = 0; spasi < n; spasi++) {
+        cout << "  ";
+    }
+    cout << "*" << endl;
+
+    return 0;
 }
 ```
 
