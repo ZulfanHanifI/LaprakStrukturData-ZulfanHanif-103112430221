@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 1 <br> Nama Modul</h1>
+# <h1 align="center">Laporan Praktikum Modul 1 <br> Pengenalan CPP</h1>
 <p align="center">Zulfan Hanif - 103112430221</p>
 
 ## Dasar Teori
