@@ -215,6 +215,8 @@ Jika pengguna memasukan angka di luar rentang 0–100, maka program akan menolak
 
 Buatlah program yang dapat memberikan input dan ouput sbb.
 
+![Screenshot bagian x](output/soal3.png)
+
 
 ```cpp
 #include <iostream>
@@ -256,6 +258,8 @@ int main() {
 > ![Screenshot bagian x](output/ss3.png)
 
 > Penjelasan
+
+Tujuan dari program ini adalah untuk membuat sebuah aplikasi sederhana yang menerima input berupa bilangan bulat positif kemudian menampilkan pola(pattern) berbentuk seperti cermin sesuai dengan angka yang dimasukkan. Dengan alur pengguna memasukan angka positif, setelah program akan mencetak pola seperti cermin mengerucut kebawah, baris angka kebawah nya sebanyak angka yang dimasukan pengguna.  
 
 1. Proses input angka n
 _cout << "Masukkan angka: ";
