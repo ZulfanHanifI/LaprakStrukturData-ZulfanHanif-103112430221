@@ -17,14 +17,36 @@ aku mengerjakan perulangan
 
 Buatlah program yang menerima inputan dua buah bilangan betipe float, kemudian memberikan outputan hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
-```go
-package main
+```cpp
+#include <iostream> 
+using namespace std;
 
-func main() {
-	fmt.Println("Kode kalian disini")
-	fmt.Println("JANGAN MASUKIN >>SCREENSHOT<< KODE KALIAN DISINI")
-	fmt.Println("KALAU ADA -20 POIN LAPRAK")
+int main() {
+    float bil1, bil2;
+
+    cout << "Masukkan bilangan pertama (float): ";
+    cin >> bil1;
+    cout << "Masukkan bilangan kedua (float): ";
+    cin >> bil2;
+
+    float penjumlahan = bil1 + bil2;
+    float pengurangan = bil1 - bil2;
+    float perkalian   = bil1 * bil2;
+
+    if (bil2 != 0) {
+        float pembagian = bil1 / bil2;
+        cout << "\nHasil Pembagian: " << pembagian << endl;
+    } else {
+        cout << "\nHasil Pembagian: Tidak dapat dibagi dengan nol" << endl;
+    }
+    cout << "Hasil Penjumlahan: " << penjumlahan << endl;
+    cout << "Hasil Pengurangan: " << pengurangan << endl;
+    cout << "Hasil Perkalian  : " << perkalian << endl;
+
+    return 0; 
 }
+
+
 ```
 
 > Output
