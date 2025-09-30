@@ -1,5 +1,5 @@
 # <h1 align="center">Laporan Praktikum Modul 1 <br> Pengenalan CPP</h1>
-<p align="center">Zulfan Hanif Ihsani - 103112430221</p>
+<p align="center">ZULFAN HANIF IHSANI - 103112430221</p>
 
 ## Dasar Teori
 
