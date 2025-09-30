@@ -5,7 +5,7 @@
 
 Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahun 1980-an berdasarkan C ANSI(American National Standart Institute). Prototype C++ muncul sebagai C yang dipercanggih dengan fasilitas kelas. Setelah itu tahun 1983-1984, C dengan kelas disempurnakan dengan menambahkan fasilitas pembeban lebihan operator dan fungsi yang kemudian melahirkan apa yang disebut C++. Simbol ++ merupakan operator C untuk operasi penaikan, muncul untuk menunjukan bahwa bahasa baru ini merupakan versi yang lebih canggih dari C. 
 
-1. Pengenal
+#### 1. Pengenal
    
    Indentifier merupakan nama yang biasa digunakan untuk variabel, konstanta, fungsi atau objek lain yang didefinisikan oleh program. Aturan yang digunakan untuk menentukan identifier:
    - Harus diawali dengan huruf(A....Z, a.....z) atau garis bawah(_).
@@ -15,7 +15,7 @@ Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahu
    - Tidak boleh menggunakan operator aritmatika (+-/*%).
    - Bahasa C++ bersifat
      case sensitive, artinya huruf besar dan huruf kecil dianggap berbeda (Contoh: panjang berbeda dengan Panjang).
-3. Tipe Data Dasar
+#### 2. Tipe Data Dasar
    
    Data adalah suatu nilai yang dapat dinyatakan dalam bentuk konstanta atau variabel. Data berdasarkan jenisnya dibagi menjadi 5 kelompok, yang disebut tipe data dasar:
    - Bilangan bulat (integer).
@@ -28,20 +28,22 @@ Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahu
 > 
 > ![Screenshot bagian x](output/teori.png)
 
-3. Pemodifikasi Tipe (Type Modifier):
+#### 3. Pemodifikasi Tipe (Type Modifier):
    - unsigned: Digunakan untuk data dengan nilai positif saja (misalnya, unsigned int dapat menerima data dari 0-65.535).
    - short: Digunakan bersama integer yang ukurannya disamakan dengan integer atau dibedakan, tergantung pada sistem dan jenis komputer.
    - long: Digunakan untuk menaikkan kapasitas dari suatu variabel.
 
-4. Variabel dan Konstanta
+#### 4. Variabel dan Konstanta
    
    - Variabel
 
      Variabel digunakan untuk menyimpan nilai, dan nilainya bisa berubah-ubah selama program berjalan. Aturan penamaan variabel harus sesuai dengan aturan penamaan identifier. Bentuk umum pendeklarasian: tipe_data nama_variabel;.
 
-> Contoh: 
+```
+Contoh: 
 
-> *int x,y;*
+*int x,y;*
+```
 
 Variabel dapat langsung diberikan nilai awal (inisialisasi) saat dideklarasikan.
     
@@ -57,16 +59,14 @@ Variabel dapat langsung diberikan nilai awal (inisialisasi) saat dideklarasikan.
 
      *const float phi = 3.14;*
 
-5. Output: Fungsi cout()
+#### 5. Output: Fungsi cout()
 
 *cout()* digunakan untuk mencetak data baik yang bertipe numerik, teks, konstanta, maupun variabel. Penentu format (%d, %f, dll.) dipakai di bahasa C, tetapi tidak harus dipakai pada C++. Untuk mengatur lebar field dan jumlah desimal yang ingin dicetak pada tipe data float, digunakan format %a.bf (di mana a adalah Lebar Field dan b adalah Jumlah Desimal).
 
 
 - Escape Sequence
 
-Notasi 
-
-\ dianggap sebagai karakter "escape".
+Notasi \ dianggap sebagai karakter "escape".
 
 Contoh:
 
@@ -76,7 +76,7 @@ Contoh:
 
 \": Tanda kutip ganda.
 
-6. Input: Fungsi cin() dan getchar()
+#### 6. Input: Fungsi cin() dan getchar()
 
 - Fungsi cin() digunakan untuk meminta inputan keyboard dari user.
 
@@ -89,7 +89,7 @@ Pada cin(), tidak perlu menggunakan penentu format seperti pada printf(). cin me
 
 getchar() akan menunggu pengguna menekan sebuah tombol dan tidak memerlukan tombol Enter untuk menyelesaikan input, berbeda dengan cin.
 
-7. Operator Aritmatika
+#### 7. Operator Aritmatika
 
 Operator Aritmatika digunakan untuk operasi matematika dasar. Tingkatan pengerjaan operator diatur berdasarkan aturan tanda kurung (), perkalian/pembagian/sisa pembagian (*, /, %), dan penambahan/pengurangan (+, -).
 
@@ -101,7 +101,7 @@ Contoh Operator Aritmatika Lain (Operator Pengerjaan Aritmatika/Assignment):
 - /= : assignment pembagian.
 - %=: assignment mod.
 
-8. Kondisional
+#### 8. Kondisional
 
 Kondisional (Percabangan) digunakan untuk mengatasi masalah yang memerlukan pengambilan keputusan.
 
@@ -112,8 +112,6 @@ Kondisional (Percabangan) digunakan untuk mengatasi masalah yang memerlukan peng
   Bentuk 1:
 
 ```cpp
-C++
-
 if (kondisi)
 {
     pernyataan;
@@ -128,8 +126,6 @@ Jika kondisi benar, maka pernyataan dijalankan.
   Bentuk 2:
 
 ```cpp
-C++
-
 if (kondisi)
     pernyataan1;
 else
@@ -144,8 +140,6 @@ Jika kondisi benar, maka pernyataan1 dijalankan. Jika kondisi salah, maka pernya
   Bentuk 3:
 
 ```cpp
-C++
-
 switch (variabel) {
     case kondisi1: pernyataan1; break;
     case kondisi2: pernyataan2; break;
@@ -154,7 +148,7 @@ switch (variabel) {
 Pilihan pada switch akan dimulai dari kondisi1, kalau nilai kondisi1 cocok maka pernyataan1 dilakukan, bila tidak cocok akan diteruskan pada pengecekan pernyataan2. Bila tidak ditemukan kondisi yang cocok maka default akan dijalankan.
 ```
 
-9. Perulangan
+#### 9. Perulangan
 
    Perulangan (Looping) digunakan untuk mengeksekusi satu atau serangkaian perintah secara berulang-ulang.
 
@@ -165,8 +159,6 @@ Pilihan pada switch akan dimulai dari kondisi1, kalau nilai kondisi1 cocok maka 
    - Perulangan for:
   
 ```cpp
-C++
-
 for (initialization; condition; increment/decrement)
     statement;
 initialization: Pernyataan untuk menyatakan keadaan awal dari variabel kontrol.
@@ -179,8 +171,6 @@ increment/decrement: Pengaturan perubahan nilai variabel kontrol.
    - Perulangan while:
 
 ```cpp
-C++
-
 while (condition) {
     statement;
     increment/decrement;
@@ -194,23 +184,19 @@ while (condition) {
      Struktur:
 
 ```cpp
-C++
-
 do {
     statement;
 } while (condition);
 Perintah di dalam do...while akan dieksekusi minimal satu kali sebelum kondisi diperiksa.
 ```
 
-10. Struktur (Struct)
+#### 10. Struktur (Struct)
 
-    Struktur merupakan tipe data bentukan berupa kumpulan dari variabel yang dinyatakan dalam sebuah nama, di mana setiap variabel bisa memiliki tipe yang berlainan. Struktur digunakan untuk mengelompokkan beberapa informasi yang saling berkaitan menjadi satu kesatuan (dalam bahasa Pascal disebut record).
+Struktur merupakan tipe data bentukan berupa kumpulan dari variabel yang dinyatakan dalam sebuah nama, di mana setiap variabel bisa memiliki tipe yang berlainan. Struktur digunakan untuk mengelompokkan beberapa informasi yang saling berkaitan menjadi satu kesatuan (dalam bahasa Pascal disebut record).
 
 Bentuk umum pendeklarasian struktur:
 
 ```cpp
-C++
-
 struct nama_tipe_struktur {
     tipe field1;
     tipe field2;
@@ -226,7 +212,9 @@ Contoh: variabel_struktur.nama_field.
 
 ### Soal 1
 
-aku mengerjakan perulangan
+Aku mengerjakan sebuah program sederhana menggunakan bahasa C++. Program ini berfungsi untuk meminta input berupa satu karakter dari pengguna, kemudian menampilkan kembali karakter tersebut di layar. Jadi, program ini bekerja sebagai latihan dasar input dan output dalam pemrograman.
+
+Tujuan dari program ini adalah supaya aku bisa memahami bagaimana cara membaca input dari keyboard dengan fungsi getchar() dan menampilkannya kembali menggunakan cout. Dengan program ini, aku belajar bahwa getchar() hanya membaca satu karakter saja, berbeda dengan cin yang bisa membaca string atau beberapa karakter.
 
 ```cpp
 #include <iostream>
@@ -242,12 +230,14 @@ int main()
 }
 ```
 > Output
-> ![Screenshot bagian x](output/.png)
+> ![Screenshot bagian x](output/guided1.png)
 
 
 ### Soal 2
 
-aku mengerjakan perulangan
+Aku mengerjakan sebuah program C++ sederhana yang melakukan operasi aritmatika dengan beberapa variabel bilangan bulat, kemudian hasil perhitungannya disimpan ke dalam variabel bertipe float dan ditampilkan ke layar.
+
+Tujuan dari program ini adalah supaya aku bisa memahami bagaimana cara mendeklarasikan variabel, memberikan nilai awal (assignment), melakukan operasi aritmatika, serta menampilkan hasilnya dengan cout. Selain itu, aku juga belajar bagaimana tipe data int dan float berperan dalam perhitungan.
 
 ```cpp
 #include <iostream>
@@ -265,11 +255,13 @@ int main()
 }
 ```
 > Output
-> ![Screenshot bagian x](output/Guided1.png)
+> ![Screenshot bagian x](output/guided2.png)
 
 ### Soal 3
 
-aku mengerjakan perulangan
+Aku mengerjakan sebuah program C++ untuk menghitung luas dan keliling persegi panjang. Dalam program ini, aku menggunakan fungsi dan prosedur supaya bisa memahami perbedaan keduanya dalam pemrograman.
+
+Tujuan dari program ini adalah supaya aku bisa berlatih membuat fungsi yang mengembalikan nilai (return value) dan prosedur yang hanya menampilkan hasil tanpa mengembalikan nilai. Dengan begitu, aku semakin paham bagaimana memisahkan logika perhitungan dan tampilan output.
 
 ```cpp
 #include <iostream>
@@ -322,12 +314,17 @@ int main()
 ```
 
 > Output
-> ![Screenshot bagian x](output/ss1.png)
+> ![Screenshot bagian x](output/guided3.png)
 
 
 ### Soal 4
 
-aku mengerjakan perulangan
+Aku mengerjakan sebuah program C++ yang berisi beberapa contoh penggunaan percabangan (if-else dan switch-case). Program ini terdiri dari tiga bagian: dua program tentang perhitungan diskon, dan satu program tentang menentukan hari kerja atau hari libur berdasarkan kode hari.
+Dari program-program ini, aku belajar:
+
+- If-else cocok dipakai untuk pengambilan keputusan sederhana seperti menghitung diskon.
+- Switch-case lebih mudah dipahami ketika ada banyak kondisi dengan nilai yang spesifik, seperti menentukan jenis hari.
+- Inisialisasi variabel sangat penting agar nilai default tetap terjaga, misalnya pada variabel diskon.
 
 ```cpp
 #include <iostream>
@@ -388,11 +385,16 @@ int main()
 ```
 
 > Output
-> ![Screenshot bagian x](output/ss1.png)
+> ![Screenshot bagian x](output/guided4.png)
 
 ### Soal 5
 
-aku mengerjakan perulangan
+Aku mengerjakan sebuah program C++ untuk mempelajari penggunaan perulangan. Program ini terdiri dari dua contoh: menggunakan for loop dan menggunakan do-while loop.
+Dari kedua contoh program ini aku belajar 
+
+- for loop itu digunakan kalau jumlah perulangan sudah diketahui jelas di awal.
+- Do-while loop itu digunakan kalau kita ingin perintah dijalankan setidaknya sekali, baru kemudian dicek kondisi perulangannya.
+- Setiap jenis perulangan punya kegunaan masing-masing, jadi aku harus bisa memilih sesuai kebutuhan program.
 
 ```cpp
 #include <iostream>
@@ -426,11 +428,17 @@ int main()
 ```
 
 > Output
-> ![Screenshot bagian x](output/ss1.png)
+> ![Screenshot bagian x](output/guided5.png)
 
 ### Soal 6
 
-aku mengerjakan perulangan
+Aku mengerjakan sebuah program C++ yang menggunakan struct untuk menyimpan data mahasiswa. Struct adalah kumpulan variabel dengan tipe data berbeda yang digabungkan dalam satu nama, sehingga memudahkan penyimpanan data yang saling berhubungan.
+
+Tujuan dari program ini adalah supaya aku bisa memahami bagaimana cara membuat struct, mengisi nilainya melalui input, dan menampilkannya kembali. Dalam kasus ini, aku menyimpan data mahasiswa berupa nama, NIM, dan IPK.
+
+Dari program ini aku belajar bahwa struct sangat berguna untuk mengelompokkan data yang berbeda tapi masih saling terkait. Dengan struct, data mahasiswa seperti nama, NIM, IPK bisa dikelola lebih rapi dalam satu variabel (mhs1).
+
+Kalau aku ingin menyimpan lebih dari satu mahasiswa, aku bisa membuat array dari struct Mahasiswa, misalnya Mahasiswa daftar[10]; untuk menampung 10 data mahasiswa.
 
 ```cpp
 #include <iostream>
@@ -467,7 +475,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/ss1.png)
+> ![Screenshot bagian x](output/guided6.png)
 
 ## Unguided
 
