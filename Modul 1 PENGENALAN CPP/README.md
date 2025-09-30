@@ -710,7 +710,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/ss3.png)
+> ![Screenshot bagian x](output/unguided3.png)
 
 > Penjelasan
 
