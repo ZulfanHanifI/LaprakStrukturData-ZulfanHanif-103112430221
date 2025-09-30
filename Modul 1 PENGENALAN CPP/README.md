@@ -756,5 +756,6 @@ Setelah proses loop selesai, baris terakhir hanya berisi spasi dan tanda *.
 
 ## Referensi
 
-1. https://www.w3schools.com/cpp/default.asp 
+1. https://www.w3schools.com/cpp/default.asp
+2. Modul 1_Codeblocks IDE & Pengenalan Bahasa C++ (Bagian Pertama).pdf
 
