@@ -670,7 +670,7 @@ Jika pengguna memasukan angka di luar rentang 0–100, maka program akan menolak
 
 Buatlah program yang dapat memberikan input dan ouput sbb.
 
-![Screenshot bagian x](output/unguided3.png)
+![Screenshot bagian x](output/soal3.png)
 
 
 ```cpp
