@@ -3,7 +3,223 @@
 
 ## Dasar Teori
 
-yang panjang dikit
+Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahun 1980-an berdasarkan C ANSI(American National Standart Institute). Prototype C++ muncul sebagai C yang dipercanggih dengan fasilitas kelas. Setelah itu tahun 1983-1984, C dengan kelas disempurnakan dengan menambahkan fasilitas pembeban lebihan operator dan fungsi yang kemudian melahirkan apa yang disebut C++. Simbol ++ merupakan operator C untuk operasi penaikan, muncul untuk menunjukan bahwa bahasa baru ini merupakan versi yang lebih canggih dari C. 
+
+1. Pengenal
+   
+   Indentifier merupakan nama yang biasa digunakan untuk variabel, konstanta, fungsi atau objek lain yang didefinisikan oleh program. Aturan yang digunakan untuk menentukan identifier:
+   - Harus diawali dengan huruf(A....Z, a.....z) atau garis bawah(_).
+   - Karakter selanjutnya bisa berupa huruf, digit atau karakter garis bawah (_) atau dollar($).
+   - Panjang maksimal identifier adalah 32 karakter; jika lebih, hanya 32 karakter awal yang dianggap.
+   - Tidak boleh mengandung spasi.
+   - Tidak boleh menggunakan operator aritmatika (+-/*%).
+   - Bahasa C++ bersifat
+     case sensitive, artinya huruf besar dan huruf kecil dianggap berbeda (Contoh: panjang berbeda dengan Panjang).
+3. Tipe Data Dasar
+   
+   Data adalah suatu nilai yang dapat dinyatakan dalam bentuk konstanta atau variabel. Data berdasarkan jenisnya dibagi menjadi 5 kelompok, yang disebut tipe data dasar:
+   - Bilangan bulat (integer).
+   - Bilangan real presisi - tunggal.
+   - Bilangan real presisi - ganda.
+   - Karakter.
+   - Tak-bertipe.
+   
+> Daftar tipe data dasat:
+> ![Screenshot bagian x](output/ss1.png)
+
+3. Pemodifikasi Tipe (Type Modifier):
+   - unsigned: Digunakan untuk data dengan nilai positif saja (misalnya, unsigned int dapat menerima data dari 0-65.535).
+   - short: Digunakan bersama integer yang ukurannya disamakan dengan integer atau dibedakan, tergantung pada sistem dan jenis komputer.
+   - long: Digunakan untuk menaikkan kapasitas dari suatu variabel.
+
+4. Variabel dan Konstanta
+   
+   - Variabel
+
+     Variabel digunakan untuk menyimpan nilai, dan nilainya bisa berubah-ubah selama program berjalan. Aturan penamaan variabel harus sesuai dengan aturan penamaan identifier. Bentuk umum pendeklarasian: tipe_data nama_variabel;.
+
+> Contoh: 
+
+> *int x,y;*
+
+Variabel dapat langsung diberikan nilai awal (inisialisasi) saat dideklarasikan.
+    
+    Contoh: 
+    
+    *int x=20, Y=6;*
+
+   - Konstanta
+
+     Konstanta menyatakan nilai yang selalu tetap dan juga mempunyai tipe data. Pendeklarasian konstanta dilakukan dengan menambahkan kata kunci const di depan tipe data dan variabel.
+
+     Contoh:
+
+     *const float phi = 3.14;*
+
+5. Output: Fungsi cout()
+
+*cout()* digunakan untuk mencetak data baik yang bertipe numerik, teks, konstanta, maupun variabel. Penentu format (%d, %f, dll.) dipakai di bahasa C, tetapi tidak harus dipakai pada C++. Untuk mengatur lebar field dan jumlah desimal yang ingin dicetak pada tipe data float, digunakan format %a.bf (di mana a adalah Lebar Field dan b adalah Jumlah Desimal).
+
+
+- Escape Sequence
+
+Notasi 
+
+\ dianggap sebagai karakter "escape".
+
+Contoh:
+
+\n: Baris baru (Newline).
+
+\t: Tabulasi.
+
+\": Tanda kutip ganda.
+
+6. Input: Fungsi cin() dan getchar()
+
+- Fungsi cin() digunakan untuk meminta inputan keyboard dari user.
+
+Bentuk umum: *cin >> nama_variabel;*
+
+Pada cin(), tidak perlu menggunakan penentu format seperti pada printf(). cin menggunakan operator >> untuk langsung memasukkan nilai ke dalam variabel.
+
+
+- Fungsi getchar() digunakan untuk membaca satu karakter dari input standar (keyboard).
+
+getchar() akan menunggu pengguna menekan sebuah tombol dan tidak memerlukan tombol Enter untuk menyelesaikan input, berbeda dengan cin.
+
+7. Operator Aritmatika
+
+Operator Aritmatika digunakan untuk operasi matematika dasar. Tingkatan pengerjaan operator diatur berdasarkan aturan tanda kurung (), perkalian/pembagian/sisa pembagian (*, /, %), dan penambahan/pengurangan (+, -).
+
+Contoh Operator Aritmatika Lain (Operator Pengerjaan Aritmatika/Assignment):
+
+- +=: assignment penambahan (Contoh: A += 7 ekuivalen dengan A = A + 7).
+- -= : assignment pengurangan.
+- *= : assignment perkalian.
+- /= : assignment pembagian.
+- %=: assignment mod.
+
+8. Kondisional
+
+Kondisional (Percabangan) digunakan untuk mengatasi masalah yang memerlukan pengambilan keputusan.
+
+- Pernyataan if
+
+  Melaksanakan pernyataan jika kondisi benar.
+
+  Bentuk 1:
+
+```cpp
+C++
+
+if (kondisi)
+{
+    pernyataan;
+}
+Jika kondisi benar, maka pernyataan dijalankan.
+```
+
+- Pernyataan if-else
+
+  Menyediakan dua pilihan pernyataan yang akan dijalankan.
+
+  Bentuk 2:
+
+```cpp
+C++
+
+if (kondisi)
+    pernyataan1;
+else
+    pernyataan2;
+Jika kondisi benar, maka pernyataan1 dijalankan. Jika kondisi salah, maka pernyataan2 yang dijalankan.
+```
+
+- Pernyataan switch
+
+  Digunakan untuk menangani pengambilan keputusan yang melibatkan banyak alternatif.
+
+  Bentuk 3:
+
+```cpp
+C++
+
+switch (variabel) {
+    case kondisi1: pernyataan1; break;
+    case kondisi2: pernyataan2; break;
+    default: pernyataan_n; break;
+}
+Pilihan pada switch akan dimulai dari kondisi1, kalau nilai kondisi1 cocok maka pernyataan1 dilakukan, bila tidak cocok akan diteruskan pada pengecekan pernyataan2. Bila tidak ditemukan kondisi yang cocok maka default akan dijalankan.
+```
+
+9. Perulangan
+
+   Perulangan (Looping) digunakan untuk mengeksekusi satu atau serangkaian perintah secara berulang-ulang.
+
+   - Perulangan for dan while
+
+     Digunakan jika sudah dapat dipastikan kondisi perulangan akan terpenuhi.
+     
+   - Perulangan for:
+  
+```cpp
+C++
+
+for (initialization; condition; increment/decrement)
+    statement;
+initialization: Pernyataan untuk menyatakan keadaan awal dari variabel kontrol.
+
+condition: Ekspresi relasi yang menyatakan kondisi untuk keluar dari perulangan.
+
+increment/decrement: Pengaturan perubahan nilai variabel kontrol.
+```
+
+   - Perulangan while:
+
+```cpp
+C++
+
+while (condition) {
+    statement;
+    increment/decrement;
+}
+```
+     
+   - Perulangan do...while
+
+     Digunakan jika seleksi berada di bawah batas perulangan.
+
+     Struktur:
+
+```cpp
+C++
+
+do {
+    statement;
+} while (condition);
+Perintah di dalam do...while akan dieksekusi minimal satu kali sebelum kondisi diperiksa.
+```
+
+10. Struktur (Struct)
+
+    Struktur merupakan tipe data bentukan berupa kumpulan dari variabel yang dinyatakan dalam sebuah nama, di mana setiap variabel bisa memiliki tipe yang berlainan. Struktur digunakan untuk mengelompokkan beberapa informasi yang saling berkaitan menjadi satu kesatuan (dalam bahasa Pascal disebut record).
+
+Bentuk umum pendeklarasian struktur:
+
+```cpp
+C++
+
+struct nama_tipe_struktur {
+    tipe field1;
+    tipe field2;
+    ...
+    tipe fieldN;
+} variabel_struktur1, ... variabel_strukturN;
+Mengakses elemen struktur menggunakan tanda dot (.) atau titik dua (:).
+
+Contoh: variabel_struktur.nama_field.
+```
 
 ## Guided
 
@@ -11,16 +227,231 @@ yang panjang dikit
 
 aku mengerjakan perulangan
 
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    int W, X, Y;
+    float Z;
+    X = 7;
+    Y = 3;
+    W = 1;
+    Z = (X + Y) / (Y + W);
+    cout << "Nilai z = " << Z << endl;
+    return 0;
+}
+```
+> Output
+> ![Screenshot bagian x](output/ss1.png)
+
+
 ### Soal 2
+
+aku mengerjakan perulangan
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Prosedur: hanya menampilkan hasil, tidak mengembalikan nilai
+void tampilkanHasil(double p, double l)
+{
+    cout << "\n=== Hasil Perhitungan ===" << endl;
+    cout << "Panjang : " << p << endl;
+    cout << "Lebar   : " << l << endl;
+    cout << "Luas    : " << p * l << endl;
+    cout << "Keliling: " << 2 * (p + l) << endl;
+}
+
+// Fungsi: mengembalikan nilai luas
+double hitungLuas(double p, double l)
+{
+    return p * l;
+}
+
+// Fungsi: mengembalikan nilai keliling
+double hitungKeliling(double p, double l)
+{
+    return 2 * (p + l);
+}
+
+int main()
+{
+    double panjang, lebar;
+
+    cout << "Masukkan panjang: ";
+    cin >> panjang;
+    cout << "Masukkan lebar  : ";
+    cin >> lebar;
+
+    // Panggil fungsi
+    double luas = hitungLuas(panjang, lebar);
+    double keliling = hitungKeliling(panjang, lebar);
+
+    cout << "\nDihitung dengan fungsi:" << endl;
+    cout << "Luas      = " << luas << endl;
+    cout << "Keliling  = " << keliling << endl;
+
+    // Panggil prosedur
+    tampilkanHasil(panjang, lebar);
+
+    return 0;
+}
+```
+
+> Output
+> ![Screenshot bagian x](output/ss1.png)
+
 
 ### Soal 3
 
+aku mengerjakan perulangan
+
+```cpp
+#include <iostream>
+using namespace std;
+// int main()
+// {
+//     double tot_pembelian, diskon;
+//     cout << "total pembelian: Rp";
+//     cin >> tot_pembelian;
+//     diskon = 0;
+//     if (tot_pembelian >= 100000)
+//         diskon = 0.05 * tot_pembelian;
+//     cout << "besar diskon = Rp" << diskon;
+// }
+
+
+
+// int main()
+// {
+//     double tot_pembelian, diskon;
+//     cout << "total pembelian: Rp";
+//     cin >> tot_pembelian;
+//     diskon = 0;
+//     if (tot_pembelian >= 100000)
+//         diskon = 0.05 * tot_pembelian;
+//     else
+//         diskon = 0;
+//     cout << "besar diskon = Rp" << diskon;
+// }
+
+
+
+int main()
+{
+    int kode_hari;
+    cout << "Menentukan hari kerja/libur\n"<<endl;
+    cout << "1=Senin 3=Rabu 5=Jumat 7=Minggu "<<endl;
+    cout << "2=Selasa 4=Kamis 6=Sabtu "<<endl;
+    cin >> kode_hari;
+    switch (kode_hari)
+    {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        cout<<"Hari Kerja";
+        break;
+    case 6:
+    case 7:
+        cout<<"Hari Libur";
+        break;
+    default:
+        cout<<"Kode masukan salah!!!";
+    }
+    return 0;
+}
+```
+
+> Output
+> ![Screenshot bagian x](output/ss1.png)
+
 ### Soal 4
+
+aku mengerjakan perulangan
+
+```cpp
+#include <iostream>
+using namespace std;
+// int main()
+// {
+//     int jum;
+//     cout << "jumlah perulangan: ";
+//     cin >> jum;
+//     for (int i = 0; i < jum; i++)
+//     {
+//         cout << "saya sahroni\n";
+//     }
+//     return 1;
+// }
+
+
+// while
+int main()
+{
+    int i = 1;
+    int jum;
+    cin >> jum;
+    do
+    {
+        cout << "bahlil ke-" << (i + 1) << endl;
+        i++;
+    } while (i < jum);
+    return 0;
+}
+```
+
+> Output
+> ![Screenshot bagian x](output/ss1.png)
 
 ### Soal 5
 
+aku mengerjakan perulangan
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Definisi struct
+struct Mahasiswa {
+    string nama;
+    string nim;
+    float ipk;
+};
+
+int main() {
+
+    Mahasiswa mhs1;
+
+    cout << "Masukkan Nama Mahasiswa: ";
+    getline(cin, mhs1.nama);
+    // cin >> mhs1.nama;
+    cout << "Masukkan NIM Mahasiswa : ";
+    cin >> mhs1.nim;
+    cout << "Masukkan IPK Mahasiswa : ";
+    cin >> mhs1.ipk;
+
+    cout << "\n=== Data Mahasiswa ===" << endl;
+    cout << "Nama : " << mhs1.nama << endl;
+    cout << "NIM  : " << mhs1.nim << endl;
+    cout << "IPK  : " << mhs1.ipk << endl;
+
+    return 0;
+}
+
+```
+
+> Output
+> ![Screenshot bagian x](output/ss1.png)
+
 ### Soal 6
 
+```cpp
+```
 
 ## Unguided
 
