@@ -24,8 +24,9 @@ Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahu
    - Karakter.
    - Tak-bertipe.
    
-> Daftar tipe data dasat:
-> ![Screenshot bagian x](output/ss1.png)
+> Daftar tipe data dasar:
+> 
+> ![Screenshot bagian x](output/teori.png)
 
 3. Pemodifikasi Tipe (Type Modifier):
    - unsigned: Digunakan untuk data dengan nilai positif saja (misalnya, unsigned int dapat menerima data dari 0-65.535).
@@ -232,6 +233,27 @@ aku mengerjakan perulangan
 using namespace std;
 int main()
 {
+    string ch;
+    cout << "Masukkan sebuah karakter: ";
+    // cin >> ch;
+    ch = getchar();  //Menggunakan getchar() untuk membaca satu karakter
+    cout << "Karakter yang Anda masukkan adalah: " << ch << endl;
+    return 0;
+}
+```
+> Output
+> ![Screenshot bagian x](output/.png)
+
+
+### Soal 2
+
+aku mengerjakan perulangan
+
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
     int W, X, Y;
     float Z;
     X = 7;
@@ -243,10 +265,9 @@ int main()
 }
 ```
 > Output
-> ![Screenshot bagian x](output/ss1.png)
+> ![Screenshot bagian x](output/Guided1.png)
 
-
-### Soal 2
+### Soal 3
 
 aku mengerjakan perulangan
 
@@ -304,7 +325,7 @@ int main()
 > ![Screenshot bagian x](output/ss1.png)
 
 
-### Soal 3
+### Soal 4
 
 aku mengerjakan perulangan
 
@@ -369,7 +390,7 @@ int main()
 > Output
 > ![Screenshot bagian x](output/ss1.png)
 
-### Soal 4
+### Soal 5
 
 aku mengerjakan perulangan
 
@@ -407,7 +428,7 @@ int main()
 > Output
 > ![Screenshot bagian x](output/ss1.png)
 
-### Soal 5
+### Soal 6
 
 aku mengerjakan perulangan
 
@@ -448,11 +469,6 @@ int main() {
 > Output
 > ![Screenshot bagian x](output/ss1.png)
 
-### Soal 6
-
-```cpp
-```
-
 ## Unguided
 
 ### Soal 1
@@ -490,7 +506,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/ss1.png)
+> ![Screenshot bagian x](output/unguided1.png)
 
 > Penjelasan
 
@@ -596,7 +612,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/ss2.png)
+> ![Screenshot bagian x](output/unguided2.png)
 
 > Penjelasan
 
@@ -646,7 +662,7 @@ Jika pengguna memasukan angka di luar rentang 0–100, maka program akan menolak
 
 Buatlah program yang dapat memberikan input dan ouput sbb.
 
-![Screenshot bagian x](output/soal3.png)
+![Screenshot bagian x](output/unguided3.png)
 
 
 ```cpp
