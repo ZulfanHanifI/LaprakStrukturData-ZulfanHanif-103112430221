@@ -88,13 +88,50 @@ Matriks hasil transpose:
 ```
 
 ```cpp
-package main
+#include <iostream>
+using namespace std;
 
-func main() {
-	fmt.Println("Kode kalian disini")
-	fmt.Println("JANGAN MASUKIN >>SCREENSHOT<< KODE KALIAN DISINI")
-	fmt.Println("KALAU ADA -20 POIN LAPRAK")
+int main() {
+    // Inisialisasi matriks awal 3x3
+    int matriks[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    // Deklarasi matriks hasil transpose
+    int transpose[3][3];
+
+    // Proses transpose (baris menjadi kolom, kolom menjadi baris)
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            transpose[j][i] = matriks[i][j];
+        }
+    }
+
+    // Tampilkan matriks awal
+    cout << "Matriks awal :" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matriks[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << endl;
+
+    // Tampilkan matriks hasil transpose
+    cout << "Matriks hasil transpose :" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << transpose[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
+
 ```
 
 > Output
