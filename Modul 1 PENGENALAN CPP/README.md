@@ -632,35 +632,43 @@ Dengan demikian, program ini mempermudah proses konversi angka ke tulisan tanpa 
 
 1. *Array String satuan[], belasan[], dan puluhan[]*
 
-satuan digunakan untuk angka 1–9.
+- array satuan digunakan untuk angka 1–9.
 
-belasan untuk angka 10–19.
+- arraybelasan untuk angka 10–19.
 
-puluhan untuk angka 20, 30, … sampai 90.
+- array puluhan untuk angka 20, 30, … sampai 90.
 
 2. Kasus Khusus (Boundary Case)
 
-Jika n == 0 → output "nol".
+Jika n == 0 maka akan menampilkan output "nol".
 
-Jika n == 100 → output "seratus".
+Jika n == 100 maka akan menampilkan output "seratus".
+
+Kasus khusus ini hanya untuk pengguna yang memasukan angka 0 dan 100 ke dalam program.
 
 3. Jika Angka < 10
-   
-Misalnya 7 → "tujuh".
+
+Jika pengguna memasukan angka kurang dari 10, maka array satuan akan berjalan
+
+Misalnya pengguna memasukan angka 7 maka program akan output "tujuh".
 
 5. Jika Angka 10–19
-   
-Misalnya 13 → "tiga belas".
+
+Jika pengguna memasukan angka diantara 10-19, maka array belasan akan berjalan
+
+Misalnya pengguna memasukan angka 13 maka program akan output "tiga belas".
 
 7. Jika Angka 20–99
+   
+Jika pengguna memasukan angka diantara 20-99, makan proses array akan seperti berikut;
 
-puluh = n / 10 → mengambil bagian puluhan.
+- puluh = n / 10 => mengambil bagian puluhan.
 
-sisa = n % 10 → mengambil bagian satuan.
+- sisa = n % 10 => mengambil bagian satuan.
 
-Jika sisa == 0 → angka bulat puluhan, misalnya 40 → "empat puluh".
+- Jika sisa == 0 => angka bulat puluhan, misalnya 40 → "empat puluh".
 
-Jika sisa != 0 → gabungan puluhan + satuan, misalnya 79 → "tujuh puluh sembilan".
+- Jika sisa != 0 => gabungan puluhan + satuan, misalnya 79 → "tujuh puluh sembilan".
 
 6. Validasi Input
    
@@ -742,7 +750,7 @@ Menampilkan angka dari i sampai 1.
 
 *cout << "* ";*
 
-Selalu ada di tengah tiap baris.
+Menampilkan * selalu ada di tengah tiap baris.
 
 6. Bagian Kanan (Menaik)
 
