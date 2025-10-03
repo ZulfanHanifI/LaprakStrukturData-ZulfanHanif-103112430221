@@ -3,7 +3,11 @@
 
 ## Dasar Teori
 
-yang panjang dikit
+Pada pertemuan dua ini, melanjutkan dari apa yang udah 
+
+1. Array
+
+   Array merupakan kumpulan data dengan nama yang sama dan setiap elemen bertipe data sama. Untuk mengakses setiap komponen / elemen array berdasarkan indeks dari setiap elemen.
 
 ## Guided
 
