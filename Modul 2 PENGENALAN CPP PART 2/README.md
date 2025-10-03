@@ -96,24 +96,20 @@ Matriks hasil transpose:
 using namespace std;
 
 int main() {
-    // Inisialisasi matriks awal 3x3
     int matriks[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    // Deklarasi matriks hasil transpose
     int transpose[3][3];
 
-    // Proses transpose (baris menjadi kolom, kolom menjadi baris)
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             transpose[j][i] = matriks[i][j];
         }
     }
 
-    // Tampilkan matriks awal
     cout << "Matriks awal :" << endl;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -124,7 +120,6 @@ int main() {
 
     cout << endl;
 
-    // Tampilkan matriks hasil transpose
     cout << "Matriks hasil transpose :" << endl;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -156,10 +151,24 @@ Nilai setelah dikuadratkan: 25
 ```
 
 ```cpp
-package main
+#include <iostream>
+using namespace std;
 
-func main() {
-	fmt.Println("kode untuk soal nomor 2A")
+void kuadratkan(int &x) {
+    x = x * x;  
+}
+
+int main() {
+    int angka;
+
+    cout << "Nilai Awal: ";
+    cin >> angka;
+
+    kuadratkan(angka);
+
+    cout << "Nilai setelah dikuadratkan: " << angka << endl;
+
+    return 0;
 }
 ```
 
