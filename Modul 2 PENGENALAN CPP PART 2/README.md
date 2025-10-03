@@ -11,7 +11,7 @@ Pada pertemuan dua ini, melanjutkan dari apa yang udah
 
 ## Guided
 
-### soal 1
+### Soal 1
 
 Aku mengerjakan sebuah program dalam bahasa C++ yang memanfaatkan konsep call by reference menggunakan pointer. Program ini berfungsi untuk menukar nilai dari dua variabel, yaitu a dan b, dengan bantuan sebuah prosedur bernama tukar. 
 
@@ -43,10 +43,10 @@ int main()
 ```
 
 > Output
-> ![Screenshot bagian x](output/screenshot_soal1.png)
+> ![Screenshot bagian x](output/guided1.png)
 
 
-### soal 2
+### Soal 2
 
 aku mengerjakan perulangan
 
@@ -72,7 +72,7 @@ int main()
 ```
 
 > Output
-> ![Screenshot bagian x](output/screenshot_soal1.png)
+> ![Screenshot bagian x](output/guided2.png)
 
 ## Unguided
 
