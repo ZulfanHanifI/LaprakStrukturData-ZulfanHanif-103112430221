@@ -5,9 +5,95 @@
 
 Pada pertemuan dua ini, melanjutkan dari apa yang udah 
 
-1. Array
+#### 1. Konsep Array
+   
+Array atau Larik adalah tipe data terstruktur yang berfungsi sebagai wadah untuk menyimpan sekelompok data yang memiliki tipe data yang sama (homogen) di bawah satu nama variabel. Array memiliki sifat statis, yang berarti ukuran (jumlah elemen) dari array harus ditentukan saat deklarasi dan tidak dapat diubah selama program berjalan. Setiap elemen dalam array diakses melalui indeks yang bersifat unik. Dalam bahasa C++, indeks array selalu dimulai dari 0.
 
-   Array merupakan kumpulan data dengan nama yang sama dan setiap elemen bertipe data sama. Untuk mengakses setiap komponen / elemen array berdasarkan indeks dari setiap elemen.
+##### A. Array Satu Dimensi (1D)
+
+Array satu dimensi adalah larik data sederhana yang hanya memerlukan satu indeks untuk mengakses elemennya.
+```
+Deklarasi: 
+tipe_data nama_array[ukuran];
+```
+```
+Contoh:
+int nilai[10]; (membuat array bernama nilai yang dapat menyimpan 10 nilai integer, dari nilai[0] hingga nilai[9]).
+```
+
+##### B. Array Dua Dimensi (2D)
+
+Array dua dimensi menyerupai tabel atau matriks, di mana data diorganisir dalam baris dan kolom. Diperlukan dua indeks untuk mengakses setiap elemen.
+
+```
+Deklarasi: tipe_data nama_array[baris][kolom];
+```
+```
+Contoh: float matriks[3][4]; (membuat array matriks berukuran 3 baris dan 4 kolom). 
+```
+
+#### 2. Parameter Fungsi dan Mekanisme Pelewatan
+   
+Fungsi atau Prosedur (dikenal sebagai fungsi void di C++) adalah subprogram yang menerima nilai melalui parameter. Cara data dilewatkan dari program pemanggil (parameter aktual) ke subprogram (parameter formal) dikenal sebagai mekanisme pelewatan parameter.
+
+##### A. Call by Value (Pelewatan Nilai)
+
+Mekanisme ini adalah standar C++. Nilai dari parameter aktual disalin (di-copy) ke parameter formal.
+
+Efek: Parameter formal dan aktual adalah dua variabel yang terpisah. Setiap perubahan yang dilakukan pada parameter formal di dalam fungsi tidak akan memengaruhi nilai parameter aktual di luar fungsi.
+
+##### B. Call by Reference (Pelewatan Acuan)
+
+Call by Reference adalah mekanisme pelewatan yang memungkinkan fungsi untuk memodifikasi variabel asli dari program pemanggil.
+
+Mekanisme: Yang dilewatkan adalah alamat memori dari variabel aktual. Parameter formal menjadi alias (nama lain) bagi variabel aktual, sehingga keduanya menunjuk ke lokasi memori yang sama.
+
+Implementasi: Parameter formal dideklarasikan dengan menambahkan operator ampersand (&) setelah tipe data.
+
+```cpp
+void tukar(int &a, int &b) { // 'a' dan 'b' adalah referensi
+    // ... perubahan pada a dan b akan mempengaruhi variabel aslinya
+}
+```
+
+Efek: Perubahan pada parameter formal di dalam fungsi secara langsung memengaruhi nilai variabel aktual di program pemanggil.
+
+##### C. Call by Pointer (Pelewatan Alamat)
+
+Call by Pointer adalah mekanisme pelewatan yang menggunakan variabel pointer untuk secara eksplisit menunjuk alamat memori variabel aktual.
+
+Mekanisme: Program pemanggil mengirimkan alamat memori (&nama_variabel) dari variabel aktual. Parameter formal dideklarasikan sebagai variabel pointer (*nama_pointer) untuk menyimpan alamat tersebut.
+
+Konsep Pointer:
+
+- Pointer (*) adalah variabel yang menyimpan alamat memori.
+
+- Operator & (Address-of) digunakan untuk mendapatkan alamat variabel.
+
+- Operator * (Dereference) digunakan untuk mengakses atau memanipulasi nilai yang berada di alamat yang ditunjuk oleh pointer.
+
+Implementasi:
+
+```cpp
+void tukar(int *a, int *b) { // 'a' dan 'b' adalah pointer
+    int temp = *a; // Ambil nilai yang ditunjuk 'a'
+    *a = *b;       // Ubah nilai di alamat 'a'
+    *b = temp;     // Ubah nilai di alamat 'b'
+}
+// Pemanggilan: tukar(&nilai1, &nilai2);
+```
+
+Efek: Fungsi dapat memanipulasi nilai variabel aktual dengan menggunakan operator dereference (*) pada pointer formal, karena mereka bekerja pada lokasi memori yang sama.
+
+Call by Reference dan Call by Pointer adalah cara utama untuk memungkinkan fungsi mengubah nilai variabel di program pemanggil, yang sangat penting dalam pengolahan array besar atau struktur data lainnya karena menghindari penyalinan data yang tidak efisien.
+
+
+
+
+
+
+
+
 
 ## Guided
 
@@ -140,9 +226,26 @@ int main() {
 
 > Output
 > ![Screenshot bagian x](output/screenshot_soal1.png)
-> %% Untuk mencantumkan screenshot, tidak boleh ada spasi di urlnya `()`, penamaan file bebas asal gak sara dan mudah dipahami aja,, dan jangan lupa hapus komen ini yah%%
 
-Penjelasan ttg kode kalian disini
+1. Inisialisasi Matriks
+   
+```cpp
+int matriks[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+```
+
+Sesuai dengan soal, bahwa matriks awal di inisialisasi didalam kode, maka matriks awal ditentukan langsung di dalam kode program. Isinya adalah angka 1–9 dalam bentuk 3 baris dan 3 kolom.
+
+2. Membuat Matriks Transpose
+   
+```cpp
+int transpose[3][3];
+```
+
+Setelah itu menyediakan array 2 dimensi kosong untuk menyimpan hasil transpose.
 
 ### Soal 2
 
@@ -218,5 +321,6 @@ Setelah proses prosedur telah selesai, program menampilkan nilai angka, dimana a
 
 ## Referensi
 
-1. https://en.wikipedia.org/wiki/Data_structure (diakses blablabla)
+1. https://en.wikipedia.org/wiki/Data_structure
+2. https://www.w3schools.com/cpp/cpp_arrays.asp
 
