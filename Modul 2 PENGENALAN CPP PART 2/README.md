@@ -225,7 +225,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/screenshot_soal1.png)
+> ![Screenshot bagian x](output/unguided1.png)
 
 1. Inisialisasi Matriks
    
@@ -246,6 +246,56 @@ int transpose[3][3];
 ```
 
 Setelah itu menyediakan array 2 dimensi kosong untuk menyimpan hasil transpose.
+
+3. Logika Transpose
+
+```cpp
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        transpose[j][i] = matriks[i][j];
+    }
+}
+```
+
+- Struktur Perulangan Ganda
+
+Program menggunakan dua perulangan bersarang (nested loop):
+
+for (int i = 0; i < 3; i++)
+
+Mengakses setiap baris dari matriks awal.
+(Ingat: indeks baris i = 0, 1, 2)
+
+for (int j = 0; j < 3; j++)
+
+Mengakses setiap kolom di dalam baris ke-i.
+(Indeks kolom j = 0, 1, 2)
+
+Kombinasi dua loop ini memungkinkan kita menjangkau seluruh elemen matriks satu per satu.
+
+- Mekanisme di Dalam Memori
+
+Secara konsep memori:
+
+matriks[i][j] diakses terlebih dahulu.
+
+Nilainya disalin ke transpose[j][i].
+
+Karena array dua dimensi disimpan baris per baris di memori, operasi ini tidak mengubah urutan data di memori aslinya, melainkan membuat salinan ke struktur array lain (transpose) dengan pola posisi yang ditukar.
+
+- Kesimpulan Logika
+
+Loop pertama (i) mengontrol baris yang sedang diproses.
+
+Loop kedua (j) mengontrol kolom dalam baris tersebut.
+
+Dengan menukar posisi indeks [i][j] → [j][i], kita menukar posisi baris dan kolom.
+
+Hasil akhir adalah matriks baru yang merupakan cerminan diagonal utama dari matriks awal.
+
+4. Menampilkan Matriks Awal dan Transpose
+
+Menggunakan loop ganda untuk mencetak isi matriks baris per baris dan setelah itu, menampilkan kedua matriks agar terlihat perbedaan sebelum dan sesudah transpose.
 
 ### Soal 2
 
