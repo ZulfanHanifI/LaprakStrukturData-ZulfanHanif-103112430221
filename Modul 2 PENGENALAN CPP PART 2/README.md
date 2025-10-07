@@ -3,8 +3,6 @@
 
 ## Dasar Teori
 
-Pada pertemuan dua ini, melanjutkan dari apa yang udah 
-
 #### 1. Konsep Array
    
 Array atau Larik adalah tipe data terstruktur yang berfungsi sebagai wadah untuk menyimpan sekelompok data yang memiliki tipe data yang sama (homogen) di bawah satu nama variabel. Array memiliki sifat statis, yang berarti ukuran (jumlah elemen) dari array harus ditentukan saat deklarasi dan tidak dapat diubah selama program berjalan. Setiap elemen dalam array diakses melalui indeks yang bersifat unik. Dalam bahasa C++, indeks array selalu dimulai dari 0.
@@ -99,12 +97,12 @@ Call by Reference dan Call by Pointer adalah cara utama untuk memungkinkan fungs
 
 ### Soal 1
 
-Aku mengerjakan sebuah program dalam bahasa C++ yang memanfaatkan konsep call by reference menggunakan pointer. Program ini berfungsi untuk menukar nilai dari dua variabel, yaitu a dan b, dengan bantuan sebuah prosedur bernama tukar. 
+Aku mengerjakan program C++ yang berfungsi untuk menukar nilai dua buah variabel menggunakan fungsi dan pointer. Program ini menunjukkan bagaimana data dapat diubah melalui alamat memori (pointer), bukan hanya menyalin nilainya.
 
-Tujuan dari program ini adalah:
-1. Menunjukkan bagaimana penggunaan pointer dalam C++.
-2. Mempraktikkan call by reference, di mana variabel asli yang dikirimkan ke fungsi bisa langsung berubah nilainya tanpa perlu mengembalikan nilai.
-3. Membuktikan perbedaan nilai variabel sebelum dan sesudah proses pertukaran dengan memanggil fungsi tukar.
+Tujuan dari program ini adalah untuk memahami konsep pemanggilan fungsi menggunakan pointer (call by pointer) dalam C++.
+
+Program ini menunjukkan bagaimana fungsi dapat mengubah nilai asli variabel melalui konsep call by pointer.
+Dalam C++, hal ini dilakukan dengan cara mengirimkan alamat variabel (&) ke fungsi dan menggunakan pointer (*) untuk mengakses serta memodifikasi nilainya.
 
 ```cpp
 #include <iostream>
@@ -134,7 +132,11 @@ int main()
 
 ### Soal 2
 
-aku mengerjakan perulangan
+Aku mengerjakan program C++ yang berfungsi untuk menukar nilai dua buah variabel menggunakan fungsi dengan parameter bertipe reference.
+Berbeda dengan program sebelumnya yang memakai pointer, program ini menggunakan konsep call by reference, di mana variabel asli langsung “direferensikan” ke parameter fungsi tanpa perlu menggunakan tanda & saat pemanggilan.
+
+Singkatnya program ini menggunakan konsep call by reference, di mana variabel yang dikirim ke fungsi tidak disalin, tetapi langsung direferensikan.
+Dengan cara ini, perubahan nilai di dalam fungsi akan langsung berdampak pada variabel aslinya.
 
 ```cpp
 #include <iostream>
@@ -227,6 +229,10 @@ int main() {
 > Output
 > ![Screenshot bagian x](output/unguided1.png)
 
+> Penjelasan
+
+Program ini membuktikan bahwa operasi transpose berhasil dilakukan, yaitu dengan menukar baris menjadi kolom. Dengan teknik loop bersarang (for ganda), program dapat menyalin elemen dari matriks awal ke matriks hasil transpose dengan indeks yang ditukar.
+
 1. Inisialisasi Matriks
    
 ```cpp
@@ -259,17 +265,19 @@ for (int i = 0; i < 3; i++) {
 
 - Struktur Perulangan Ganda
 
-Program menggunakan dua perulangan bersarang (nested loop):
+Program menggunakan dua perulangan bersarang (nested loop) yaitu:
 
+```
 for (int i = 0; i < 3; i++)
+```
 
-Mengakses setiap baris dari matriks awal.
-(Ingat: indeks baris i = 0, 1, 2)
+Berfungsi untuk mengakses setiap baris dari matriks awal dengan indeks baris i = 0, 1, 2.
 
+```
 for (int j = 0; j < 3; j++)
+```
 
-Mengakses setiap kolom di dalam baris ke-i.
-(Indeks kolom j = 0, 1, 2)
+Berfungsi untuk mengakses setiap kolom di dalam baris ke-i dengan Indeks kolom j = 0, 1, 2.
 
 Kombinasi dua loop ini memungkinkan kita menjangkau seluruh elemen matriks satu per satu.
 
@@ -277,19 +285,17 @@ Kombinasi dua loop ini memungkinkan kita menjangkau seluruh elemen matriks satu 
 
 Secara konsep memori:
 
-matriks[i][j] diakses terlebih dahulu.
+```
+matriks[i][j] diakses terlebih dahulu, setelah itu Nilainya disalin ke transpose[j][i].
+```
 
-Nilainya disalin ke transpose[j][i].
-
-Karena array dua dimensi disimpan baris per baris di memori, operasi ini tidak mengubah urutan data di memori aslinya, melainkan membuat salinan ke struktur array lain (transpose) dengan pola posisi yang ditukar.
+Karena array dua dimensi itu disimpan baris per baris di memori, operasi ini tidak mengubah urutan data di memori aslinya, melainkan membuat salinan ke struktur array lain (transpose) dengan pola posisi yang ditukar.
 
 - Kesimpulan Logika
 
-Loop pertama (i) mengontrol baris yang sedang diproses.
+Loop pertama (i) yaitu untuk mengontrol baris yang sedang diproses dan loop kedua (j) yaitu untuk mengontrol kolom dalam baris tersebut.
 
-Loop kedua (j) mengontrol kolom dalam baris tersebut.
-
-Dengan menukar posisi indeks [i][j] → [j][i], kita menukar posisi baris dan kolom.
+Dengan menukar posisi indeks [i][j] menjadi [j][i], kita menukar posisi baris dan kolom.
 
 Hasil akhir adalah matriks baru yang merupakan cerminan diagonal utama dari matriks awal.
 
@@ -334,6 +340,8 @@ int main() {
 > ![Screenshot bagian x](output/unguided2.png)
 
 > Penjelasan
+
+Program ini berfungsi untuk menguadratkan sebuah bilangan, tetapi dengan tujuan utama yaitu menunjukkan penerapan konsep Call by Reference dalam C++ melalui fungsi kuadratkan() yang mengubah nilai asli variabel menjadi hasil kuadratnya, serta membuktikan bahwa perubahan nilai terjadi secara langsung tanpa perlu nilai kembalian dari fungsi.
 
 1. Prosedur kuadratkan
 
