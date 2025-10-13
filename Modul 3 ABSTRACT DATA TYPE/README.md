@@ -1,5 +1,5 @@
 
-# <h1 align="center">Laporan Praktikum Modul 2 <br> ABSTRACT DATA TYPE</h1>
+# <h1 align="center">Laporan Praktikum Modul 3 <br> ABSTRACT DATA TYPE</h1>
 <p align="center">ZULFAN HANIF IHSANI - 103112430221</p>
 
 ## Dasar Teori
