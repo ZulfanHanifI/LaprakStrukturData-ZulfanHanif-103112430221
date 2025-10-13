@@ -4,6 +4,10 @@
 
 ## Dasar Teori
 
+1. ABSTRACT DATA TYPE(ADT)
+
+ADT adalah TYPE dan sekumpulan PRIMITIF (operasi dasar) terhadap TYPE tersebut. Selain itu, dalam sebuah ADT yang lengkap, disertakan pula definisi invarian dari TYPE dan aksioma yang berlaku. ADT merupakan definisi STATIK.
+
 ## Guided
 
 ### Soal 1
@@ -11,55 +15,55 @@
 > Output
 > ![Screenshot bagian x](output/guided1.png)
 
+```cpp
+#ifndef MAHASISWA_H_INCLUDED
+#define MAHASISWA_H_INCLUDED
+struct mahasiswa{
+    char nim[10];
+    int nilai1, nilai2;
+};
+void inputMhs(mahasiswa &m);
+float rata2(mahasiswa m);
+#endif // MAHASISWA_H_INCLUDED
+```
 
-### Soal 2
+```cpp
+#include "mahasiswa.h"
+#include <iostream>
+using namespace std;
 
-> Output
-> ![Screenshot bagian x](output/guided2.png)
+void inputMhs(mahasiswa &m){
+    cout << "input nama = ";
+    cin >> (m).nim;
+    cout << "input nilai1 = ";
+    cin >> (m).nilai1;
+    cout << "input nilai2 = ";
+    cin >> (m).nilai2;
+}
 
+float rata2(mahasiswa m){
+    return (m.nilai1 + m.nilai2) / 2;
+}
+```
+
+```cpp
+#include <iostream>
+#include "mahasiswa.h"
+using namespace std;
+
+int main()
+{
+    mahasiswa mhs;
+    inputMhs(mhs);
+    cout << "rata - rata = " << rata2(mhs) << endl;
+    return 0;
+}
+```
 ## Unguided
 
 ### Soal 1
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int matriks[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-
-    int transpose[3][3];
-
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            transpose[j][i] = matriks[i][j];
-        }
-    }
-
-    cout << "Matriks awal :" << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << matriks[i][j] << " ";
-        }
-        cout << endl;
-    }
-
-    cout << endl;
-
-    cout << "Matriks hasil transpose :" << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << transpose[i][j] << " ";
-        }
-        cout << endl;
-    }
-
-    return 0;
-}
 
 ```
 
@@ -67,33 +71,6 @@ int main() {
 > ![Screenshot bagian x](output/unguided1.png)
 
 > Penjelasan
-
-### Soal 2
-
-```cpp
-#include <iostream>
-using namespace std;
-
-void kuadratkan(int &x) {
-    x = x * x;  
-}
-
-int main() {
-    int angka;
-
-    cout << "Nilai Awal: ";
-    cin >> angka;
-
-    kuadratkan(angka);
-
-    cout << "Nilai setelah dikuadratkan: " << angka << endl;
-
-    return 0;
-}
-```
-
-> Output
-> ![Screenshot bagian x](output/unguided2.png)
 
 ## Referensi
 
