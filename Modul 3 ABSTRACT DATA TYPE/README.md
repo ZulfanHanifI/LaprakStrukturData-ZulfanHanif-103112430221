@@ -15,6 +15,7 @@ ADT adalah TYPE dan sekumpulan PRIMITIF (operasi dasar) terhadap TYPE tersebut. 
 > Output
 > ![Screenshot bagian x](output/guided1.png)
 
+> Mahasiswa.h
 ```cpp
 #ifndef MAHASISWA_H_INCLUDED
 #define MAHASISWA_H_INCLUDED
@@ -27,6 +28,7 @@ float rata2(mahasiswa m);
 #endif // MAHASISWA_H_INCLUDED
 ```
 
+> Mahasiswa.cpp
 ```cpp
 #include "mahasiswa.h"
 #include <iostream>
@@ -46,6 +48,7 @@ float rata2(mahasiswa m){
 }
 ```
 
+> Main.cpp
 ```cpp
 #include <iostream>
 #include "mahasiswa.h"
