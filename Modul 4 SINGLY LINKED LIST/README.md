@@ -1,5 +1,5 @@
 
-# <h1 align="center">Laporan Praktikum Modul 2 <br> SINGLY LINKED LIST</h1>
+# <h1 align="center">Laporan Praktikum Modul 4 <br> SINGLY LINKED LIST</h1>
 <p align="center">ZULFAN HANIF IHSANI - 103112430221</p>
 
 ## Dasar Teori
