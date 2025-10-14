@@ -81,16 +81,16 @@ Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
 
 Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:
 
-> ![Screenshot bagian x](output/teori1.png)
+![Screenshot bagian x](Output/teori1.png)
 
 Buatlah implementasi ADT pelajaran pada file “pelajaran.cpp”
 Cobalah hasil implementasi ADT pada file “main.cpp”
 
-> ![Screenshot bagian x](output/teori2.png)
+![Screenshot bagian x](Output/teori2.png)
 
 Contoh output hasil:
 
-> ![Screenshot bagian x](output/teori3.png)
+![Screenshot bagian x](Output/teori3.png)
 
 ```cpp
 
