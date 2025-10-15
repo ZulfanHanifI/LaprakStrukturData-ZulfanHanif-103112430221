@@ -4,9 +4,23 @@
 
 ## Dasar Teori
 
-1. ABSTRACT DATA TYPE(ADT)
+ABSTRACT DATA TYPE(ADT)
 
 ADT adalah TYPE dan sekumpulan PRIMITIF (operasi dasar) terhadap TYPE tersebut. Selain itu, dalam sebuah ADT yang lengkap, disertakan pula definisi invarian dari TYPE dan aksioma yang berlaku. ADT merupakan definisi STATIK.
+
+ADT biasanya diimplementasikan menjadi dua buah modul utama dan 1 modul interface program utama (driver). Dua modul tersebut adalah sebagai berikut:
+
+1. Definisi/Spesifikasi Type dan Primitif/Header fungsi (.h)
+   - Spesifikasi type sesuai dengan kaidah bahasa yang dipakai
+   - Spesifikasi dari primitif sesuai dengan kaidah dalam konteks prosedural,yaitu:
+   - Fungsi : nama, domain, range, dan prekondisi jika ada
+   - Prosedur : Initial state, Final state, dan proses yang dilakukan
+     
+2. Body/realisasi dari primitif (.c)
+
+   Berupa kode program dalam bahasa yang bersangkutan (dalam praktikum ini berarti dengan bahasa C++). Realisasi fungsi dan prosedur harus sedapat mungkin memanfaatkan selector dan konstruktor. Untuk memahami lebih jelas mengenai konsep ADT, perhatikan ilustrasi berikut
+
+Untuk menerapkan konsep ADT, kita harus memisah deklarasi tipe, variabel, dan fungsi dari program ke dalam sebuah file.h dan memisah definisi fungsi dari program ke sebuah file.cpp. Sehingga jika kita menerapkan konsep ADT berdasarkan contoh program di atas, bentuk code program akan dipisah menjadi seperti berikut. 
 
 ## Guided
 
