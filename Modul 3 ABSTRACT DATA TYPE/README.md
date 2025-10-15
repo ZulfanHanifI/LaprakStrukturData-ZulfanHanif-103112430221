@@ -27,7 +27,7 @@ Untuk menerapkan konsep ADT, kita harus memisah deklarasi tipe, variabel, dan fu
 ### Soal 1
 
 > Output
-> ![Screenshot bagian x](output/guided1.png)
+> ![Screenshot bagian x](output/guided.png)
 
 > Mahasiswa.h
 ```cpp
