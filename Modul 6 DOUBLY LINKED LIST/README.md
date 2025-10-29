@@ -20,8 +20,6 @@
 
 ### Soal 1
 
-Buatlah single linked list untuk Antrian yang menyimpan data pembeli( nama dan pesanan). program memiliki beberapa menu seperti tambah antrian,  layani antrian(hapus), dan tampilkan antrian. \*antrian pertama harus yang pertama dilayani
-
 
 ```cpp
 
@@ -34,7 +32,6 @@ Buatlah single linked list untuk Antrian yang menyimpan data pembeli( nama dan p
 
 ### Soal 2
 
-Buatlah program kode untuk membalik (reverse) singly linked list (1-2-3 menjadi 3-2-1) 
 
 ```cpp
 
