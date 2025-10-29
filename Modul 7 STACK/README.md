@@ -1,5 +1,5 @@
 
-# <h1 align="center">Laporan Praktikum Modul 5 <br> STACK </h1>
+# <h1 align="center">Laporan Praktikum Modul 7 <br> STACK </h1>
 <p align="center">ZULFAN HANIF IHSANI - 103112430221</p>
 
 ## Dasar Teori
