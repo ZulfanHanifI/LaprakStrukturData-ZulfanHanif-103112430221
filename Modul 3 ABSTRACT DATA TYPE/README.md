@@ -83,13 +83,129 @@ int main()
 Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI dengan rumus 0.3*uts+0.4*uas+0.3*tugas.
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Mahasiswa {
+    string nama;
+    string nim;
+    float uts, uas, tugas, nilaiAkhir;
+};
+
+float hitungNilaiAkhir(float uts, float uas, float tugas) {
+    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
+}
+
+int main() {
+    Mahasiswa mhs[10];
+    int jumlah;
+
+    cout << "Masukkan jumlah mahasiswa (maks 10): ";
+    cin >> jumlah;
+    cout << endl;
+
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Data Mahasiswa ke-" << i + 1 << endl;
+        cout << "Nama   : ";
+        cin >> mhs[i].nama;
+        cout << "NIM    : ";
+        cin >> mhs[i].nim;
+        cout << "Nilai UTS   : ";
+        cin >> mhs[i].uts;
+        cout << "Nilai UAS   : ";
+        cin >> mhs[i].uas;
+        cout << "Nilai Tugas : ";
+        cin >> mhs[i].tugas;
+
+        mhs[i].nilaiAkhir = hitungNilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
+        cout << endl;
+    }
+
+    cout << "\n=== DATA MAHASISWA ===\n";
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Mahasiswa ke-" << i + 1 << endl;
+        cout << "Nama        : " << mhs[i].nama << endl;
+        cout << "NIM         : " << mhs[i].nim << endl;
+        cout << "UTS         : " << mhs[i].uts << endl;
+        cout << "UAS         : " << mhs[i].uas << endl;
+        cout << "Tugas       : " << mhs[i].tugas << endl;
+        cout << "Nilai Akhir : " << mhs[i].nilaiAkhir << endl;
+        cout << endl;
+    }
+
+    return 0;
+}
 ```
 
 > Output
 > ![Screenshot bagian x](output/unguided1.png)
 
 > Penjelasan
+
+Tujuan dari program ini adalah untuk membuat suatu sistem sederhana yang dapat menyimpan data mahasiswa dengan menggunakan konsep Abstract Data Type(ADT) pada bahasa pemrograman C++. ADT diimplementasikan melalui penggunaan struct, dimana satu struktur digunakan untuk menampung informasi lengkap tentang seorang mahasiswa, yaitu nama, NIM, nilai UTS, nilai UAS, nilai tugas, dan nilai akhir.
+
+1. Deklarasi struct sebagai ADT
+
+Struct digunakan sebagai ADT (Abstract Data Type) untuk menyimpan satu paket data mahasiswa (nama, nim, uts, uas, tugas, nilai akhir). Ini membentuk satu kesatuan data dan memudahkan pengolahan.
+
+- Field nama dan nim menyimpan identitas mahasiswa.
+- uts, uas, dan tugas menyimpan nilai numerik setiap komponen penilaian.
+- nilaiAkhir akan menyimpan hasil komputasi akhir (0.3uts + 0.4uas + 0.3*tugas).
+  
+Menyediakan field ini memudahkan kita menampilkan hasil tanpa menghitung ulang.
+
+2. Fungsi untuk menghitung nilai akhir
+
+Setelah itu mendeklarasi fungsi hitungNilaiAkhir yang mengambil tiga parameter bertipe float, yaitu nilai UTS, UAS, dan tugas.
+
+Fungsi ini mengimplementasikan persyaratan penilaian bobot UTS = 30%, UAS = 40%, tugas = 30%.
+
+3. Deklarasi array ADT untuk dapat menyimpan hingga 10 mahasiswa
+
+```cpp
+Mahasiswa mhs[10];
+int jumlah;
+```
+
+Pertama membuat array statis yang dapat menyimpan sampai 10 elemen Mahasiswa, setelah itu diikuti membuat menyimpan berapa banyak mahasiswa yang akan diinput (nilai ini harus ≤ 10). Mengapa harus kurang dari 10, karena menyimpan jumlah aktual memudahkan pengulangan pada saat input dan output.
+
+4. Input Jumlah Mahasiswa
+
+```cpp
+cout << "Masukkan jumlah mahasiswa (maks 10): ";
+cin >> jumlah;
+cout << endl;
+```
+
+Mencetak instruksi kepada pengguna untuk memasukkan jumlah mahasiswa, setelah itu membaca nilai jumlah yang dimasukan dengan cin. Setelah itu menambahkan endl atau \n untuk memberikan baris baru dibawah agar tampilan rapi.
+
+5. Loop input data mahasiswa
+```cpp
+for (int i = 0; i < jumlah; i++) {
+    cout << "Data Mahasiswa ke-" << i + 1 << endl;
+    cout << "Nama   : ";
+    cin >> mhs[i].nama;
+    cout << "NIM    : ";
+    cin >> mhs[i].nim;
+    cout << "Nilai UTS   : ";
+    cin >> mhs[i].uts;
+    cout << "Nilai UAS   : ";
+    cin >> mhs[i].uas;
+    cout << "Nilai Tugas : ";
+    cin >> mhs[i].tugas;
+
+    // Hitung nilai akhir dengan fungsi
+    mhs[i].nilaiAkhir = hitungNilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
+    cout << endl;
+}
+```
+Pertama _for (int i = 0; i < jumlah; i++)_ akan mengulangi proses input sebanyak jumlah mahasiswa yang di input pengguna, setelah itu pada setiap mahasiswa yang di input program meminta nama, nim, dan tiga nilai (UTS, UAS, tugas) satu per satu
+
+Setelah semua komponen nilai dibaca, program memanggil _hitungNilaiAkhir()_ dengan parameter nilai tadi, lalu menyimpan hasil ke _mhs[i].nilaiAkhir_, program akan menyimpan hasil per mahasiswa agar menampilkan nilai akhir tanpa menghitung ulang nanti
+
+6. Menampilkan data mahasiswa beserta nilai akhir
+
+Setelah semua data dikumpulkan, program akan menampilkan daftar mahasiswa satu per satu menggunakan loop yang sama i < jumlah.
 
 ### Soal 2
 
