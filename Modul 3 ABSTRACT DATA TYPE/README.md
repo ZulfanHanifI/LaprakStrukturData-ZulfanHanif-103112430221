@@ -144,13 +144,12 @@ int main() {
 
 Tujuan dari program ini adalah untuk membuat suatu sistem sederhana yang dapat menyimpan data mahasiswa dengan menggunakan konsep Abstract Data Type(ADT) pada bahasa pemrograman C++. ADT diimplementasikan melalui penggunaan struct, dimana satu struktur digunakan untuk menampung informasi lengkap tentang seorang mahasiswa, yaitu nama, NIM, nilai UTS, nilai UAS, nilai tugas, dan nilai akhir.
 
-1. Deklarasi struct sebagai ADT
+1. Mendeklarasi struct sebagai ADT
 
 Struct digunakan sebagai ADT (Abstract Data Type) untuk menyimpan satu paket data mahasiswa (nama, nim, uts, uas, tugas, nilai akhir). Ini membentuk satu kesatuan data dan memudahkan pengolahan.
-
-- Field nama dan nim menyimpan identitas mahasiswa.
-- uts, uas, dan tugas menyimpan nilai numerik setiap komponen penilaian.
-- nilaiAkhir akan menyimpan hasil komputasi akhir (0.3uts + 0.4uas + 0.3*tugas).
+   - Field nama dan nim menyimpan identitas mahasiswa.
+   - uts, uas, dan tugas menyimpan nilai numerik setiap komponen penilaian.
+   - nilaiAkhir akan menyimpan hasil komputasi akhir (0.3uts + 0.4uas + 0.3*tugas).
   
 Menyediakan field ini memudahkan kita menampilkan hasil tanpa menghitung ulang.
 
@@ -194,7 +193,7 @@ for (int i = 0; i < jumlah; i++) {
     cout << "Nilai Tugas : ";
     cin >> mhs[i].tugas;
 
-    // Hitung nilai akhir dengan fungsi
+    // Proses hitung nilai akhir dengan fungsi
     mhs[i].nilaiAkhir = hitungNilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
     cout << endl;
 }
