@@ -138,7 +138,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided1.png)
+> ![Screenshot bagian x](Output/unguided1.png)
 
 > Penjelasan
 
@@ -150,13 +150,12 @@ Struct digunakan sebagai ADT (Abstract Data Type) untuk menyimpan satu paket dat
    - Field nama dan nim menyimpan identitas mahasiswa.
    - uts, uas, dan tugas menyimpan nilai numerik setiap komponen penilaian.
    - nilaiAkhir akan menyimpan hasil komputasi akhir (0.3uts + 0.4uas + 0.3*tugas).
-  
+
 Menyediakan field ini memudahkan kita menampilkan hasil tanpa menghitung ulang.
 
 2. Fungsi untuk menghitung nilai akhir
 
-Setelah itu mendeklarasi fungsi hitungNilaiAkhir yang mengambil tiga parameter bertipe float, yaitu nilai UTS, UAS, dan tugas.
-
+Setelah itu mendeklarasi fungsi _hitungNilaiAkhir_ yang mengambil tiga parameter bertipe float, yaitu nilai UTS, UAS, dan tugas.
 Fungsi ini mengimplementasikan persyaratan penilaian bobot UTS = 30%, UAS = 40%, tugas = 30%.
 
 3. Deklarasi array ADT untuk dapat menyimpan hingga 10 mahasiswa
@@ -221,14 +220,147 @@ Contoh output hasil:
 
 ![Screenshot bagian x](Output/teori3.png)
 
+> #### pelajaran.h
 ```cpp
+#ifndef PELAJARAN_H_INCLUDE
+#define PELAJARAN_H_INCLUDE
+
+#include <iostream>
+using namespace std;
+
+struct pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
+
+pelajaran create_pelajaran(string namapel, string kodepel);
+
+void tampil_pelajaran(pelajaran pel);
+
+#endif
+```
+> #### pelajaran.cpp
+```cpp
+#include "pelajaran.h"
+
+pelajaran create_pelajaran(string namapel, string kodepel) {
+    pelajaran pel;
+    pel.namaMapel = namapel;
+    pel.kodeMapel = kodepel;
+    return pel;
+}
+
+void tampil_pelajaran(pelajaran pel) {
+    cout << "nama pelajaran : " << pel.namaMapel << endl;
+    cout << "nilai          : " << pel.kodeMapel << endl;
+}
+
+```
+> #### main.cpp
+```cpp
+#include "pelajaran.h"
+
+using namespace std;
+
+int main() {
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+
+    pelajaran pel = create_pelajaran(namapel, kodepel);
+    tampil_pelajaran(pel);
+
+    return 0;
+}
 
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided1.png)
+> ![Screenshot bagian x](Output/unguided2.png)
 
 > Penjelasan
+
+Program ini bertujuan untuk mengimplementasikan konsep Abstract Data Type (ADT) dalam bahasa pemrograman C++ dengan studi kasus data pelajaran. 
+ADT digunakan untuk memisahkan antara definisi data, operasi terhadap data, dan penggunaannya, sehingga program menjadi lebih terstruktur, modular, dan mudah dikembangkan.
+
+##### Penjelasan pelajaran.h
+
+
+1. Setelah itu mendeklarasikan struct pelajaran
+
+Struct ini merupakan representasi ADT pelajaran yang memiliki dua atribut:
+   - namaMapel berfungsi untuk menyimpan nama mata pelajaran
+   - kodeMapel berfungsi untuk menyimpan kode mata pelajaran
+
+Dengan struct ini, data pelajaran disimpan sebagai satu kesatuan, bukan variabel terpisah.
+
+2. Prototype fungsi dan prosedur
+   
+```cpp
+pelajaran create_pelajaran(string namapel, string kodepel);
+void tampil_pelajaran(pelajaran pel);
+```
+
+Fungsinya yaitu memberi tahu compiler bahwa fungsi tersebut akan diimplementasikan di file lain dan memisahkan definisi ADT dengan implementasinya
+
+##### Penjelasan pelajaran.cpp
+
+1. Implementasi create_pelajaran
+   
+```cpp
+pelajaran create_pelajaran(string namapel, string kodepel) {
+    pelajaran pel;
+    pel.namaMapel = namapel;
+    pel.kodeMapel = kodepel;
+    return pel;
+}
+```
+
+Fungsi tersebut menerima dua parameter yaitu nama dan kode pelajaran, setelah itu membuat variabel lokal bertipe pelajaran, mengisi atribut struct dan mengembalikan struct sebagai hasil fungsi.
+Fungsi ini berperan sebagai constructor manual ADT.
+
+2. Implementasi tampil_pelajaran
+   
+```cpp   
+void tampil_pelajaran(pelajaran pel) {
+    cout << "nama pelajaran : " << pel.namaMapel << endl;
+    cout << "nilai : " << pel.kodeMapel << endl;
+}
+```
+Prosedur menerima satu parameter bertipe pelajaran, setelah itu mengakses atribut struct menggunakan operator titik (.) dan menampilkan isi ADT ke layar
+
+##### Penjelasan main.cpp
+
+1. Melakukan pemanggilan ADT
+   
+```cpp  
+#include "pelajaran.h"
+```
+
+Digunakan untuk mengakses definisi ADT pelajaran dan menggunakan fungsi dan prosedur yang telah dibuat
+
+2. Pengujian ADT
+   
+```cpp
+string namapel = "Struktur Data";
+string kodepel = "STD";
+```
+
+Menyimpan data input yang akan digunakan untuk membuat ADT pelajaran.
+
+3. Membuat Data ADT
+
+```cpp
+pelajaran pel = create_pelajaran(namapel, kodepel);
+```
+
+Baris ini akan memanggil fungsi create_pelajaran, setelah itu menghasilkan sebuah data bertipe pelajaran dan menyimpan hasilnya ke variabel pel
+
+4. Menampilkan Data ADT
+
+```cpp
+tampil_pelajaran(pel);
+```
+Memanggil prosedur untuk menampilkan isi ADT pelajaran ke layar.
 
 ### Soal 3
 
