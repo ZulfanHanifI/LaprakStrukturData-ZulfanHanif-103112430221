@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahun 1980-an berdasarkan C ANSI(American National Standart Institute). Prototype C++ muncul sebagai C yang dipercanggih dengan fasilitas kelas. Setelah itu tahun 1983-1984, C dengan kelas disempurnakan dengan menambahkan fasilitas pembeban lebihan operator dan fungsi yang kemudian melahirkan apa yang disebut C++. Simbol ++ merupakan operator C untuk operasi penaikan, muncul untuk menunjukan bahwa bahasa baru ini merupakan versi yang lebih canggih dari C. 
+Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahun 1980-an berdasarkan C ANSI(American National Standart Institute). Prototype C++ muncul sebagai C yang dipercanggih dengan fasilitas kelas. Setelah itu tahun 1983-1984, C dengan kelas disempurnakan dengan menambahkan fasilitas pembeban lebihan operator dan fungsi yang kemudian melahirkan apa yang disebut C++. Simbol ++ merupakan operator C untuk operasi penaikan, muncul untuk menunjukan bahwa bahasa baru ini merupakan versi yang lebih canggih dari C.
 
 #### 1. Pengenal
    
