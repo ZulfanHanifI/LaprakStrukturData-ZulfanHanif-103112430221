@@ -6,12 +6,84 @@
 
 Linked list (biasa disebut list saja) adalah salah satu bentuk struktur data (representasi penyimpanan) berupa serangkaian elemen data yang saling berkait (berhubungan) dan bersifat fleksibel karena dapat tumbuh dan mengerut sesuai kebutuhan. Data yang disimpan dalam Linked list bisa berupa data tunggal atau data majemuk. Data tunggal merupakan data yang hanya terdiri dari satu data (variabel), misalnya: nama bertipe string. Sedangkan data majemuk merupakan sekumpulan data (record) yang di dalamnya terdiri dari berbagai tipe data, misalnya: Data Mahasiswa, terdiri dari Nama bertipe string, NIM bertipe long integer, dan Alamat bertipe string. 
 
+1. Pengertian Linked List
+
+Linked List merupakan salah satu struktur data dinamis yang tersusun atas sekumpulan elemen (node) yang saling terhubung menggunakan pointer. Setiap elemen pada linked list tidak disimpan secara berurutan di memori, melainkan dihubungkan melalui alamat memori dari elemen berikutnya. Struktur data ini bersifat fleksibel karena ukuran data dapat bertambah atau berkurang sesuai kebutuhan.
+
+2. Alasan Penggunaan Pointer pada Linked List
+
+- Implementasi linked list lebih efektif menggunakan pointer dibandingkan array, dengan alasan:
+- Array bersifat statis, sedangkan pointer bersifat dinamis.
+- Linked list memiliki elemen yang saling terhubung, sehingga lebih mudah dikelola dengan pointer.
+- Pointer memudahkan proses penyisipan dan penghapusan elemen.
+- Array lebih cocok untuk data dengan jumlah elemen tetap sejak awal.
+
+3. Singly Linked List
+
+Singly Linked List adalah jenis linked list yang setiap nodenya hanya memiliki satu pointer yang menunjuk ke node berikutnya.
+
+Karakteristik Singly Linked List:
+
+- Memiliki satu arah pointer (maju/forward).
+- Node terakhir menunjuk ke NULL.
+- Penelusuran data hanya dapat dilakukan dari awal ke akhir.
+- Penyisipan dan penghapusan data relatif mudah, terutama di tengah list.
+
+4. Komponen Singly Linked List
+
+Setiap elemen dalam Singly Linked List terdiri dari:
+
+Data (info) → menyimpan informasi utama.
+
+- Pointer (next) → menunjuk ke node berikutnya.
+- Node/Elemen → tempat penyimpanan data di memori.
+
+Istilah penting:
+
+- First/Head → pointer yang menunjuk ke elemen pertama.
+- Next → pointer penghubung ke elemen selanjutnya.
+- NULL/Nil → menandakan tidak menunjuk ke elemen mana pun (kosong).
+
+5. Operasi Dasar Singly Linked List
+
+Operasi-operasi dasar (primitif) dalam Singly Linked List meliputi:
+- Create List → membuat dan menginisialisasi list kosong.
+- Alokasi → menyediakan memori untuk node baru.
+- Dealokasi → membebaskan memori node.
+- IsEmpty → mengecek apakah list kosong.
+- Insert → menambahkan elemen ke dalam list.
+- Delete → menghapus elemen dari list.
+- View/Traversal → menampilkan seluruh elemen list.
+- Update → memperbarui data pada node tertentu.
+
+6. Operasi Insert
+
+Jenis penyisipan data dalam Singly Linked List:
+- Insert First → menambahkan elemen di awal list.
+- Insert Last → menambahkan elemen di akhir list.
+- Insert After → menambahkan elemen setelah node tertentu.
+
+7. Operasi Delete
+
+Jenis penghapusan data dalam Singly Linked List:
+- Delete First → menghapus elemen pertama.
+- Delete Last → menghapus elemen terakhir.
+- Delete After → menghapus elemen setelah node tertentu.
+- Delete All → menghapus seluruh elemen dan mengosongkan list.
+
+8. Implementasi ADT Singly Linked List
+
+ADT (Abstract Data Type) Singly Linked List biasanya dibagi ke dalam:
+- File header (.h) → berisi deklarasi struktur data dan prototipe fungsi.
+- File implementasi (.cpp) → berisi definisi fungsi-fungsi operasi list.
+- File main → digunakan untuk menguji dan menjalankan ADT Singly Linked List.
+
 ## Guided
 
 ### Soal 1
 
 > Output
-> ![Screenshot bagian x](output/guided1.png)
+> ![Screenshot bagian x](output/guided.png)
 
 ```cpp
 #include <iostream>
@@ -473,4 +545,13 @@ Program ini berhasil menerapkan algoritma pembalikan singly linked list dengan m
 
 ## Referensi
 
+Shiksha Online. (2022, Mar 24). Singly linked lists. Diambil dari https://www.shiksha.com/online-courses/articles/singly-linked-lists/
+
+GeeksforGeeks. (2025, Dec 11). Linked list data structure. Diambil dari https://www.geeksforgeeks.org/dsa/linked-list-data-structure/
+
+W3Schools. (n.d.). Types of linked lists. Diambil dari https://www.w3schools.com/dsa/dsa_data_linkedlists_types.php
+
+Programiz. (n.d.). Linked list data structure. Diambil dari https://www.programiz.com/dsa/linked-list
+
+Gondi, S. (2024, Oct 25). Introduction to linked lists: Understanding singly linked lists with example in Java. Diambil dari https://gondi-sai.medium.com/introduction-to-linked-lists-understanding-singly-linked-lists-with-example-in-java-dsa-5-29faac656dcd
 
