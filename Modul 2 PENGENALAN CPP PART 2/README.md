@@ -389,4 +389,4 @@ Petanikode. (2023). Belajar C++ #12: Mengenal tipe data struct. Diambil dari htt
 
 W3Schools.tech. (n.d.). Panduan Struktur Data C++: Panduan untuk pemula tentang struktur. Diambil dari https://w3schools.tech/id/tutorial/cplusplus/cpp_data_structures
 
-MateriDosen.com. (2016, 12 Oktober). Tutorial lengkap belajar bahasa pemrograman C++. Diambil dari https://www.materidosen.com/2016/10/tutorial-lengkap-belajar-bahasa.html
+MateriDosen.com. (2016, 12 Oktober). Tutorial lengkap belajar bahasa pemrograman C++. Diambil dari https://www.materidosen.com/2016/10/tutorial-lengkap-belajar-bahasa.html 
