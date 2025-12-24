@@ -82,6 +82,12 @@ ADT (Abstract Data Type) Singly Linked List biasanya dibagi ke dalam:
 
 ### Soal 1
 
+Aku mengerjakan program C++ yang berfungsi untuk mengimplementasikan struktur data Singly Linked List dengan berbagai operasi dasar seperti penambahan data di depan, di belakang, dan setelah data tertentu, serta operasi penghapusan, pembaruan, dan penampilan data. Program ini menggunakan konsep pointer untuk menghubungkan setiap node sehingga membentuk sebuah linked list yang bersifat dinamis.
+
+Tujuan dari program ini adalah untuk memahami cara kerja Singly Linked List serta penggunaan pointer dalam pengelolaan struktur data dinamis pada bahasa pemrograman C++. Melalui program ini, pengguna dapat berinteraksi secara langsung dengan linked list melalui menu yang disediakan.
+
+Program ini menunjukkan bagaimana setiap node saling terhubung melalui pointer next, di mana setiap perubahan data seperti insert, delete, dan update dilakukan dengan memanipulasi alamat memori, bukan sekadar menyalin nilai. Dengan demikian, program ini membantu memahami konsep dasar linked list, alokasi dan dealokasi memori, serta penerapan pointer dalam membangun dan mengelola struktur data Singly Linked List.
+
 > Output
 > ![Screenshot bagian x](output/guided.png)
 
