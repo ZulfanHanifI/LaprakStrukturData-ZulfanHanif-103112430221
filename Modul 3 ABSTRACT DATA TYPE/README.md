@@ -372,6 +372,73 @@ Buatlah program dengan ketentuan :
 pointer
 
 ```cpp
+#include <iostream>
+using namespace std;
+
+void tampilArray(int arr[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void tukarArray2D(int arr1[3][3], int arr2[3][3], int baris, int kolom) {
+    int temp = arr1[baris][kolom];
+    arr1[baris][kolom] = arr2[baris][kolom];
+    arr2[baris][kolom] = temp;
+}
+
+
+void tukarPointer(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+
+    int A[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int B[3][3] = {
+        {9, 8, 7},
+        {6, 5, 4},
+        {3, 2, 1}
+    };
+
+    int x = 10, y = 20;
+    int *px = &x;
+    int *py = &y;
+
+    cout << "Array A sebelum ditukar:" << endl;
+    tampilArray(A);
+
+    cout << "\nArray B sebelum ditukar:" << endl;
+    tampilArray(B);
+
+    tukarArray2D(A, B, 1, 1);
+
+    cout << "\nArray A setelah ditukar posisi [1][1]:" << endl;
+    tampilArray(A);
+
+    cout << "\nArray B setelah ditukar posisi [1][1]:" << endl;
+    tampilArray(B);
+
+    cout << "\nNilai sebelum ditukar pointer:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+
+    tukarPointer(px, py);
+
+    cout << "\nNilai setelah ditukar pointer:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+
+    return 0;
+}
 
 ```
 
