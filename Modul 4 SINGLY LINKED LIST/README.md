@@ -205,22 +205,232 @@ int main() {
 
 Buatlah single linked list untuk Antrian yang menyimpan data pembeli( nama dan pesanan). program memiliki beberapa menu seperti tambah antrian,  layani antrian(hapus), dan tampilkan antrian. \*antrian pertama harus yang pertama dilayani
 
-
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Node {
+    string nama;
+    string pesanan;
+    Node *next;
+};
+
+Node *front = NULL;
+Node *rear = NULL;
+
+void tambahAntrian() {
+    Node *baru = new Node;
+
+    cout << "Masukkan nama pembeli   : ";
+    cin.ignore();
+    getline(cin, baru->nama);
+
+    cout << "Masukkan pesanan        : ";
+    getline(cin, baru->pesanan);
+
+    baru->next = NULL;
+
+    if (front == NULL) {
+        front = rear = baru;
+    } else {
+        rear->next = baru;
+        rear = baru;
+    }
+
+    cout << "Pembeli berhasil ditambahkan ke antrian.\n";
+}
+
+void layaniAntrian() {
+    if (front == NULL) {
+        cout << "Antrian kosong.\n";
+        return;
+    }
+
+    Node *hapus = front;
+    cout << "Melayani pembeli: " << hapus->nama
+         << " | Pesanan: " << hapus->pesanan << endl;
+
+    front = front->next;
+    delete hapus;
+
+    if (front == NULL) {
+        rear = NULL;
+    }
+}
+
+void tampilkanAntrian() {
+    if (front == NULL) {
+        cout << "Antrian kosong.\n";
+        return;
+    }
+
+    Node *bantu = front;
+    int nomor = 1;
+
+    cout << "\nDaftar Antrian Pembeli:\n";
+    while (bantu != NULL) {
+        cout << nomor << ". "
+             << bantu->nama
+             << " - " << bantu->pesanan << endl;
+        bantu = bantu->next;
+        nomor++;
+    }
+}
+
+int main() {
+    int pilihan;
+
+    do {
+        cout << "\n=== MENU ANTRIAN PEMBELI ===\n";
+        cout << "1. Tambah Antrian\n";
+        cout << "2. Layani Antrian\n";
+        cout << "3. Tampilkan Antrian\n";
+        cout << "4. Keluar\n";
+        cout << "Pilih menu: ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1:
+                tambahAntrian();
+                break;
+            case 2:
+                layaniAntrian();
+                break;
+            case 3:
+                tampilkanAntrian();
+                break;
+            case 4:
+                cout << "Program selesai.\n";
+                break;
+            default:
+                cout << "Pilihan tidak valid.\n";
+        }
+    } while (pilihan != 4);
+
+    return 0;
+}
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided1.png)
+> ![Screenshot bagian x](output/unguided1_1.png)
+> ![Screenshot bagian x](output/unguided1_2.png)
 
 > Penjelasan
+
+Program ini bertujuan untuk mengimplementasikan struktur data Singly Linked List dalam bentuk antrian (queue) menggunakan bahasa pemrograman C++. Program dirancang untuk menyimpan data pembeli yang terdiri dari nama pembeli dan pesanan, dengan prinsip FIFO (First In First Out), yaitu pembeli yang pertama masuk antrian akan menjadi yang pertama dilayani.
+
+Import Library iostream dan string
+
+Baris #include <iostream> digunakan untuk mengimpor library standar C++ yang menyediakan fungsi input dan output seperti cin dan cout. Library ini memungkinkan program berinteraksi dengan pengguna melalui layar dan keyboard. Sementara itu, #include <string> digunakan untuk mendukung penggunaan tipe data string, yang berfungsi menyimpan data teks seperti nama pembeli dan pesanan. Tanpa library ini, pengolahan data berbentuk teks akan menjadi lebih sulit.
+
+Deklarasi Struktur Node
+
+Struktur Node didefinisikan untuk merepresentasikan satu elemen dalam singly linked list. Di dalam struktur ini terdapat tiga anggota data, yaitu nama untuk menyimpan nama pembeli, pesanan untuk menyimpan pesanan pembeli, serta pointer next yang menunjuk ke node berikutnya. Struktur ini merupakan inti dari singly linked list karena setiap node saling terhubung satu arah melalui pointer next.
+
+Deklarasi Pointer front dan rear
+
+Pointer front dan rear digunakan untuk menandai posisi awal dan akhir dari antrian. Pointer front selalu menunjuk ke node pertama yang akan dilayani, sedangkan pointer rear menunjuk ke node terakhir yang baru saja masuk antrian. Kedua pointer ini diinisialisasi dengan nilai NULL sebagai tanda bahwa antrian masih kosong saat program pertama kali dijalankan.
+
+Fungsi tambahAntrian()
+
+Fungsi tambahAntrian() berfungsi untuk menambahkan pembeli baru ke dalam antrian. Pada fungsi ini, sebuah node baru dibuat menggunakan new. Data nama dan pesanan dimasukkan ke dalam node tersebut, lalu pointer next diatur ke NULL karena node baru selalu berada di akhir antrian. Jika antrian masih kosong, maka front dan rear akan menunjuk ke node baru tersebut. Namun jika antrian sudah berisi data, node baru akan ditambahkan setelah rear, dan pointer rear akan dipindahkan ke node yang baru ditambahkan.
+
+Fungsi layaniAntrian()
+
+Fungsi layaniAntrian() digunakan untuk melayani pembeli yang berada di posisi paling depan antrian. Fungsi ini pertama-tama memeriksa apakah antrian kosong. Jika kosong, maka tidak ada pembeli yang dapat dilayani. Jika tidak kosong, maka node yang ditunjuk oleh front akan dihapus. Pointer front kemudian dipindahkan ke node berikutnya. Jika setelah penghapusan antrian menjadi kosong, maka pointer rear juga diatur menjadi NULL. Proses ini mencerminkan prinsip FIFO, di mana pembeli pertama yang masuk adalah yang pertama dilayani.
+
+Fungsi tampilkanAntrian()
+
+Fungsi tampilkanAntrian() berfungsi untuk menampilkan seluruh data pembeli yang masih berada dalam antrian. Fungsi ini menggunakan pointer sementara untuk menelusuri linked list dari front hingga mencapai NULL. Setiap node yang dilewati akan ditampilkan data nama dan pesanannya. Jika antrian kosong, maka program akan menampilkan pesan bahwa tidak ada data dalam antrian.
+
+Fungsi main()
+
+Fungsi main() merupakan titik awal eksekusi program. Di dalam fungsi ini terdapat menu interaktif yang memungkinkan pengguna memilih operasi yang ingin dilakukan, seperti menambah antrian, melayani antrian, atau menampilkan antrian. Program menggunakan perulangan do-while agar menu terus muncul hingga pengguna memilih opsi keluar. Struktur switch-case digunakan untuk memproses pilihan menu secara terstruktur dan mudah dipahami.
+
+Kesimpulan
+
+Program ini berhasil menerapkan konsep Singly Linked List dalam bentuk antrian (queue) dengan prinsip FIFO. Setiap operasi utama dalam antrian seperti penambahan, penghapusan, dan penampilan data diimplementasikan menggunakan pointer dan node secara dinamis. Dengan program ini, konsep Abstract Data Type (ADT) dapat dipahami secara praktis melalui studi kasus antrian pembeli.
 
 ### Soal 2
 
 Buatlah program kode untuk membalik (reverse) singly linked list (1-2-3 menjadi 3-2-1) 
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Node {
+    int data;
+    Node* next;
+};
+
+Node* head = NULL;
+
+void tambahNode(int nilai) {
+    Node* baru = new Node;
+    baru->data = nilai;
+    baru->next = NULL;
+
+    if (head == NULL) {
+        head = baru;
+    } else {
+        Node* temp = head;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = baru;
+    }
+}
+
+void tampilkanList() {
+    Node* temp = head;
+    cout << "Linked List: ";
+    while (temp != NULL) {
+        cout << temp->data;
+        if (temp->next != NULL)
+            cout << " -> ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+void reverseList() {
+    Node* prev = NULL;
+    Node* current = head;
+    Node* next = NULL;
+
+    while (current != NULL) {
+        next = current->next;   
+        current->next = prev;   
+        prev = current;         
+        current = next;     
+    }
+
+    head = prev; 
+}
+
+int main() {
+    int n, nilai;
+
+    cout << "Masukkan jumlah data: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Masukkan data ke-" << i + 1 << ": ";
+        cin >> nilai;
+        tambahNode(nilai);
+    }
+
+    cout << "\nSebelum dibalik:\n";
+    tampilkanList();
+
+    reverseList();
+
+    cout << "\nSetelah dibalik:\n";
+    tampilkanList();
+
+    return 0;
+}
 ```
 
 > Output
