@@ -434,9 +434,42 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided1.png)
+> ![Screenshot bagian x](output/unguided2.png)
 
 > Penjelasan
+
+Import Library iostream
+
+Baris #include <iostream> digunakan untuk mengimpor library standar C++ yang menyediakan fasilitas input dan output. Library ini memungkinkan program menerima masukan dari pengguna melalui cin dan menampilkan hasil ke layar menggunakan cout. Tanpa library ini, interaksi antara program dan pengguna tidak dapat dilakukan.
+
+Deklarasi Struktur Node
+
+Struktur Node digunakan untuk merepresentasikan satu elemen dalam singly linked list. Struktur ini memiliki dua anggota, yaitu data yang berfungsi menyimpan nilai integer, dan pointer next yang menunjuk ke node berikutnya. Pointer next menjadi penghubung antar node sehingga membentuk sebuah rantai data satu arah.
+
+Deklarasi Pointer head
+
+Pointer head berfungsi sebagai penunjuk awal linked list. Pointer ini selalu menunjuk ke node pertama dalam linked list. Ketika linked list masih kosong, nilai head adalah NULL. Semua operasi traversal, penambahan, dan pembalikan linked list dimulai dari pointer head.
+
+Fungsi tambahNode()
+
+Fungsi tambahNode() digunakan untuk menambahkan data baru ke dalam linked list. Node baru dibuat secara dinamis menggunakan new, kemudian nilai data dimasukkan ke dalam node tersebut. Jika linked list masih kosong, node baru langsung dijadikan sebagai head. Jika tidak kosong, program akan menelusuri linked list hingga node terakhir, lalu menghubungkan node terakhir tersebut dengan node baru.
+
+Fungsi tampilkanList()
+
+Fungsi tampilkanList() bertujuan untuk menampilkan seluruh isi linked list. Fungsi ini menggunakan pointer sementara untuk menelusuri node mulai dari head hingga mencapai NULL. Setiap data node ditampilkan secara berurutan sehingga pengguna dapat melihat kondisi linked list sebelum dan sesudah proses pembalikan dilakukan.
+
+Fungsi reverseList()
+
+Fungsi reverseList() merupakan inti dari program ini. Proses pembalikan dilakukan dengan menggunakan tiga pointer, yaitu prev, current, dan next. Pointer current digunakan untuk menunjuk node yang sedang diproses, next digunakan untuk menyimpan alamat node berikutnya agar tidak hilang, dan prev digunakan sebagai penunjuk node sebelumnya.
+Pada setiap iterasi, arah pointer next dari node saat ini dibalik sehingga menunjuk ke node sebelumnya. Proses ini dilakukan berulang hingga seluruh node diproses. Setelah proses selesai, pointer head diperbarui agar menunjuk ke node terakhir yang kini menjadi node pertama.
+
+Fungsi main()
+
+Fungsi main() merupakan titik awal eksekusi program. Pada fungsi ini, pengguna diminta memasukkan jumlah data dan nilai setiap data yang akan dimasukkan ke dalam linked list. Setelah data dimasukkan, program menampilkan linked list sebelum dibalik, kemudian memanggil fungsi reverseList() untuk membalik urutan node, dan akhirnya menampilkan hasil linked list setelah dibalik.
+
+Kesimpulan
+
+Program ini berhasil menerapkan algoritma pembalikan singly linked list dengan memanfaatkan manipulasi pointer tanpa menggunakan struktur data tambahan. Dengan memahami program ini, mahasiswa dapat memperoleh pemahaman yang lebih baik mengenai konsep pointer, traversal linked list, serta cara kerja operasi reverse yang sering digunakan dalam struktur data.
 
 ## Referensi
 
