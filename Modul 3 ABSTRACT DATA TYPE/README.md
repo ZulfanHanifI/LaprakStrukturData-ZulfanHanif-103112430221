@@ -26,6 +26,8 @@ Untuk menerapkan konsep ADT, kita harus memisah deklarasi tipe, variabel, dan fu
 
 ### Soal 1
 
+Program ini bertujuan untuk mengelola data mahasiswa secara sederhana menggunakan bahasa pemrograman C++, dengan memanfaatkan struktur data struct dan konsep pemisahan program ke dalam beberapa file. Data yang dikelola meliputi NIM serta dua buah nilai mahasiswa, yang kemudian digunakan untuk menghitung nilai rata-rata. Program ini juga dirancang untuk melatih penggunaan fungsi, parameter reference, serta kerja sama antara file header (.h), file implementasi (.cpp), dan file utama (main.cpp).
+
 > Output
 > ![Screenshot bagian x](Output/guided.png)
 
@@ -41,6 +43,8 @@ void inputMhs(mahasiswa &m);
 float rata2(mahasiswa m);
 #endif // MAHASISWA_H_INCLUDED
 ```
+
+File Mahasiswa.h berfungsi sebagai file header yang berisi pendefinisian struktur data mahasiswa serta deklarasi fungsi yang digunakan dalam program. Struktur mahasiswa menyimpan atribut NIM, nilai pertama, dan nilai kedua. Selain itu, file ini juga menggunakan header guard untuk mencegah terjadinya duplikasi pemanggilan file. Dua fungsi dideklarasikan, yaitu inputMhs() untuk menginput data mahasiswa dan rata2() untuk menghitung nilai rata-rata.
 
 > Mahasiswa.cpp
 ```cpp
@@ -62,6 +66,8 @@ float rata2(mahasiswa m){
 }
 ```
 
+File Mahasiswa.cpp berisi implementasi dari fungsi-fungsi yang telah dideklarasikan pada file header. Fungsi inputMhs() digunakan untuk menerima input NIM dan dua nilai mahasiswa dari pengguna, dengan parameter bertipe reference agar perubahan data langsung tersimpan pada variabel yang dipanggil. Sementara itu, fungsi rata2() digunakan untuk menghitung dan mengembalikan hasil rata-rata dari dua nilai mahasiswa berdasarkan data yang telah diinput.
+
 > Main.cpp
 ```cpp
 #include <iostream>
@@ -76,6 +82,8 @@ int main()
     return 0;
 }
 ```
+File Main.cpp merupakan bagian utama program yang mengatur alur eksekusi. Pada file ini dibuat sebuah variabel bertipe struct mahasiswa, kemudian fungsi inputMhs() dipanggil untuk mengisi data mahasiswa. Setelah data diinput, fungsi rata2() dipanggil untuk menghitung nilai rata-rata, dan hasilnya ditampilkan ke layar. Dengan demikian, file ini berperan sebagai pengendali utama yang menghubungkan seluruh fungsi dan struktur data dalam program.
+
 ## Unguided
 
 ### Soal 1
