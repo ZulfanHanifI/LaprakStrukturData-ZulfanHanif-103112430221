@@ -447,7 +447,44 @@ int main() {
 
 > Penjelasan
 
+Program ini bertujuan untuk menerapkan konsep Abstract Data Type (ADT) dan pointer dalam bahasa C++, khususnya dalam pengolahan array dua dimensi dan pertukaran data melalui fungsi/prosedur. Program ini juga melatih pemahaman mahasiswa terhadap pengiriman parameter, referensi memori, serta pemrograman modular.
+
+Penjelasan Program Secara Rinci
+
+1. Deklarasi Array 2D dan Pointer
+
+Pada bagian awal program, dideklarasikan dua buah array integer dua dimensi berukuran 3×3 yang berfungsi sebagai data utama. Kedua array ini digunakan untuk menyimpan sekumpulan nilai bilangan bulat yang nantinya akan dimanipulasi. Selain itu, program juga mendeklarasikan dua variabel integer dan dua buah pointer yang masing-masing menunjuk ke alamat memori dari variabel tersebut. Pointer digunakan untuk menunjukkan bagaimana pertukaran nilai dapat dilakukan secara langsung melalui alamat memori.
+
+2. Prosedur tampilArray
+
+Program memiliki prosedur tampilArray yang berfungsi untuk menampilkan seluruh isi array dua dimensi ke layar. Prosedur ini menggunakan perulangan bersarang untuk mengakses setiap elemen berdasarkan baris dan kolom. Dengan adanya prosedur ini, proses penampilan array tidak perlu ditulis berulang kali di dalam fungsi utama, sehingga program menjadi lebih efisien dan rapi.
+
+3. Prosedur tukarArray2D
+
+Selanjutnya, terdapat prosedur tukarArray2D yang berfungsi untuk menukarkan nilai dari dua array dua dimensi pada posisi tertentu. Posisi elemen yang ditukar ditentukan oleh parameter baris dan kolom yang dikirimkan ke prosedur. Proses pertukaran dilakukan dengan bantuan variabel sementara agar nilai tidak hilang. Prosedur ini menunjukkan bahwa array dua dimensi dapat dimanipulasi melalui fungsi dengan pengiriman parameter.
+Konsep ini menunjukkan bagaimana array 2D dapat dimanipulasi melalui fungsi.
+
+4. Prosedur tukarPointer
+
+Program juga memiliki prosedur tukarPointer yang digunakan untuk menukarkan nilai dari dua variabel menggunakan pointer. Prosedur ini menerima dua parameter berupa alamat memori variabel. Dengan mengakses nilai menggunakan operator dereference (*), perubahan yang dilakukan di dalam prosedur langsung memengaruhi nilai variabel asli di fungsi main. Hal ini membuktikan konsep call by address dalam C++.
+
+5. Fungsi main
+
+Fungsi main berperan sebagai pusat eksekusi program. Pada fungsi ini dilakukan inisialisasi array, deklarasi pointer, serta pemanggilan seluruh prosedur yang telah dibuat. Fungsi main juga menampilkan kondisi data sebelum dan sesudah proses pertukaran untuk membuktikan bahwa fungsi dan prosedur bekerja dengan benar.
 
 ## Referensi
 
+Cplusplus.com. (n.d.). Arrays in C++. Retrieved from https://cplusplus.com/doc/tutorial/arrays/
+
+Cplusplus.com. (n.d.). Pointers. Retrieved from https://cplusplus.com/doc/tutorial/pointers/
+
+GeeksforGeeks. (n.d.). Two dimensional array in C++. Retrieved from https://www.geeksforgeeks.org/two-dimensional-array-in-cpp/
+
+GeeksforGeeks. (n.d.). Call by reference in C++. Retrieved from https://www.geeksforgeeks.org/call-by-reference-in-cpp/
+
+GeeksforGeeks. (n.d.). Abstract Data Types. Retrieved from https://www.geeksforgeeks.org/abstract-data-types/
+
+Programiz. (n.d.). C++ Functions. Retrieved from https://www.programiz.com/cpp-programming/function
+
+Programiz. (n.d.). C++ Pointers. Retrieved from https://www.programiz.com/cpp-programming/pointers
 
