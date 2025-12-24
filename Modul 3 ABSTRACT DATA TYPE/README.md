@@ -16,7 +16,7 @@ ADT biasanya diimplementasikan menjadi dua buah modul utama dan 1 modul interfac
    - Fungsi : nama, domain, range, dan prekondisi jika ada
    - Prosedur : Initial state, Final state, dan proses yang dilakukan
      
-2. Body/realisasi dari primitif (.c)
+2. Body/realisasi dari primitif (.c) 
 
    Berupa kode program dalam bahasa yang bersangkutan (dalam praktikum ini berarti dengan bahasa C++). Realisasi fungsi dan prosedur harus sedapat mungkin memanfaatkan selector dan konstruktor. Untuk memahami lebih jelas mengenai konsep ADT, perhatikan ilustrasi berikut
 
