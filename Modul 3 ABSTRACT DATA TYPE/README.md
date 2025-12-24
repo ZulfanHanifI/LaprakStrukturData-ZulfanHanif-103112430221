@@ -443,7 +443,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided1.png)
+> ![Screenshot bagian x](Output/unguided3.png)
 
 > Penjelasan
 
