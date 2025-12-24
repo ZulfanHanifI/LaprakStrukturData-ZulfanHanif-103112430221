@@ -282,7 +282,7 @@ int main() {
 Program ini bertujuan untuk mengimplementasikan konsep Abstract Data Type (ADT) dalam bahasa pemrograman C++ dengan studi kasus data pelajaran. 
 ADT digunakan untuk memisahkan antara definisi data, operasi terhadap data, dan penggunaannya, sehingga program menjadi lebih terstruktur, modular, dan mudah dikembangkan.
 
-##### Penjelasan pelajaran.h
+##### Penjelasan file pelajaran.h
 
 
 1. Setelah itu mendeklarasikan struct pelajaran
@@ -302,7 +302,7 @@ void tampil_pelajaran(pelajaran pel);
 
 Fungsinya yaitu memberi tahu compiler bahwa fungsi tersebut akan diimplementasikan di file lain dan memisahkan definisi ADT dengan implementasinya
 
-##### Penjelasan pelajaran.cpp
+##### Penjelasan file pelajaran.cpp
 
 1. Implementasi create_pelajaran
    
@@ -328,7 +328,7 @@ void tampil_pelajaran(pelajaran pel) {
 ```
 Prosedur menerima satu parameter bertipe pelajaran, setelah itu mengakses atribut struct menggunakan operator titik (.) dan menampilkan isi ADT ke layar
 
-##### Penjelasan main.cpp
+##### Penjelasan file main.cpp
 
 1. Melakukan pemanggilan ADT
    
