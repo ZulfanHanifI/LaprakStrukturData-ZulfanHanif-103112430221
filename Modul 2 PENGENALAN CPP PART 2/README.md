@@ -379,6 +379,14 @@ Setelah proses prosedur telah selesai, program menampilkan nilai angka, dimana a
 
 ## Referensi
 
-1. https://en.wikipedia.org/wiki/Data_structure
-2. https://www.w3schools.com/cpp/cpp_arrays.asp
+W3Schools. (n.d.). C++ data structures. Diambil dari https://www.w3schools.com/cpp/cpp_data_structures.asp
 
+C++ Data Structures from Scratch. (n.d.). C++ Data Structures from Scratch, Vol.1. Diambil dari https://cppdatastructures.com/vol-1.html
+
+Goddard, W. (n.d.). Intro to C++ classes and data structures. Diambil dari https://people.computing.clemson.edu/~goddard/texts/dataStructCPP/
+
+Petanikode. (2023). Belajar C++ #12: Mengenal tipe data struct. Diambil dari https://www.petanikode.com/cpp-struct/
+
+W3Schools.tech. (n.d.). Panduan Struktur Data C++: Panduan untuk pemula tentang struktur. Diambil dari https://w3schools.tech/id/tutorial/cplusplus/cpp_data_structures
+
+MateriDosen.com. (2016, 12 Oktober). Tutorial lengkap belajar bahasa pemrograman C++. Diambil dari https://www.materidosen.com/2016/10/tutorial-lengkap-belajar-bahasa.html
