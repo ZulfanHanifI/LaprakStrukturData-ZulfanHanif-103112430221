@@ -15,7 +15,7 @@ Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahu
    - Tidak boleh menggunakan operator aritmatika (+-/*%).
    - Bahasa C++ bersifat
      case sensitive, artinya huruf besar dan huruf kecil dianggap berbeda (Contoh: panjang berbeda dengan Panjang).
-#### 2. Tipe Data Dasar
+#### 2. Tipe Data Dasar 
    
    Data adalah suatu nilai yang dapat dinyatakan dalam bentuk konstanta atau variabel. Data berdasarkan jenisnya dibagi menjadi 5 kelompok, yang disebut tipe data dasar:
    - Bilangan bulat (integer).
