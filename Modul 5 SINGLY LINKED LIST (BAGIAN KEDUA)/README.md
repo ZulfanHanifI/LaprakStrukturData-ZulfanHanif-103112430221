@@ -4,14 +4,93 @@
 
 ## Dasar Teori
 
-Linked list (biasa disebut list saja) adalah salah satu bentuk struktur data (representasi penyimpanan) berupa serangkaian elemen data yang saling berkait (berhubungan) dan bersifat fleksibel karena dapat tumbuh dan mengerut sesuai kebutuhan. Data yang disimpan dalam Linked list bisa berupa data tunggal atau data majemuk. Data tunggal merupakan data yang hanya terdiri dari satu data (variabel), misalnya: nama bertipe string. Sedangkan data majemuk merupakan sekumpulan data (record) yang di dalamnya terdiri dari berbagai tipe data, misalnya: Data Mahasiswa, terdiri dari Nama bertipe string, NIM bertipe long integer, dan Alamat bertipe string. 
+Pengantar Singly Linked List (Lanjutan)
+
+Singly Linked List merupakan struktur data dinamis yang setiap elemennya (node) saling terhubung menggunakan satu buah pointer yang menunjuk ke node berikutnya. Pada bagian kedua ini, pembahasan difokuskan pada operasi lanjutan yang berhubungan dengan pencarian data, pengolahan isi list, serta manipulasi struktur list secara lebih kompleks.
+
+Operasi Searching
+
+Searching merupakan operasi dasar pada Singly Linked List yang digunakan untuk mencari node tertentu berdasarkan nilai data atau alamat node.
+
+Karakteristik operasi searching:
+- Dilakukan dengan menelusuri list dari node pertama (first) hingga akhir.
+- Proses berhenti ketika data yang dicari ditemukan atau list habis ditelusuri.
+- Searching menjadi dasar untuk operasi lain seperti:
+  - Insert After
+  - Delete After
+  - Update data
+
+Jenis fungsi searching:
+- findElm(L, X) → mencari elemen dengan nilai data X, mengembalikan alamat node jika ditemukan.
+- fFindElm(L, P) → mengecek apakah alamat node P terdapat di dalam list.
+- findBefore(L, P) → mencari node sebelum node P.
+
+3. ADT Singly Linked List
+
+ADT (Abstract Data Type) Singly Linked List menyimpan definisi struktur data dan operasi-operasi primitif yang digunakan dalam pengolahan list.
+
+Komponen utama ADT:
+- infotype → tipe data yang disimpan (misalnya integer)
+- address → pointer ke node
+- ElmList → struktur node yang berisi info dan next
+- List → struktur list yang memiliki pointer first
+- ADT ini biasanya dibagi dalam:
+- File header (.h) → deklarasi tipe data dan prototipe fungsi
+- File implementasi (.cpp) → definisi fungsi
+- File main → pengujian dan penggunaan ADT
+
+4. Operasi Manipulasi Data
+
+Operasi lanjutan pada Singly Linked List meliputi:
+
+a. Insert
+- Insert First → menambah elemen di awal list
+- Insert Last → menambah elemen di akhir list
+- Insert After → menambah elemen setelah node tertentu
+
+b. Delete
+- Delete First → menghapus elemen pertama
+- Delete Last → menghapus elemen terakhir
+- Delete After → menghapus elemen setelah node tertentu
+- Delete by Value (delP) → menghapus elemen berdasarkan nilai data
+
+Semua operasi delete harus diikuti dengan dealokasi memori agar tidak terjadi kebocoran memori.
+
+5. Operasi Tambahan pada List
+
+Selain operasi dasar, Singly Linked List juga memiliki operasi pengolahan lanjutan, antara lain:
+- printInfo(L) → menampilkan seluruh isi list
+- nbList(L) → menghitung jumlah elemen dalam list
+- delAll(L) → menghapus seluruh elemen dan mengosongkan list
+- invertList(L) → membalik urutan elemen list
+- copyList(L1, L2) → menyalin list dengan alamat node yang sama
+- fCopyList(L) → membuat salinan list baru
+
+6. Penerapan Searching dan Pengolahan Data
+
+Pada penerapannya, operasi searching digunakan untuk:
+- Menemukan elemen tertentu (misalnya mencari data bernilai 8)
+- Menghitung total nilai seluruh elemen list
+- Melakukan update atau delete pada node tertentu
+
+Hal ini menunjukkan bahwa Singly Linked List tidak hanya digunakan untuk penyimpanan data, tetapi juga untuk pengolahan data secara terstruktur dan dinamis.
+
+7. Kesimpulan
+
+Singly Linked List bagian kedua menekankan pada operasi pencarian dan manipulasi lanjutan terhadap list. Dengan memahami searching, delete, copy, dan invert list, pengguna dapat mengelola data secara lebih efisien dan fleksibel. Operasi-operasi tersebut menjadi dasar dalam pengembangan struktur data yang lebih kompleks.
 
 ## Guided
 
 ### Soal 1
 
+Aku mengerjakan program C++ yang berfungsi untuk mengimplementasikan struktur data Singly Linked List dengan berbagai operasi lanjutan seperti penambahan data di depan, di belakang, dan setelah data tertentu, serta operasi penghapusan, pembaruan, dan penampilan data. Program ini menunjukkan bagaimana data disimpan dan dikelola menggunakan node yang saling terhubung melalui pointer, sehingga struktur data dapat berubah secara dinamis.
+
+Tujuan dari program ini adalah untuk memahami konsep Singly Linked List serta penggunaan pointer dan alokasi memori dinamis dalam bahasa pemrograman C++. Melalui program ini, pengguna dapat melakukan manipulasi data secara langsung melalui operasi insert, delete, dan update pada linked list.
+
+Program ini menunjukkan bagaimana setiap operasi pada Singly Linked List dilakukan dengan memanipulasi alamat memori antar node, bukan dengan pemindahan data secara langsung. Dalam C++, hal ini dilakukan dengan mengatur pointer next pada setiap node untuk menghubungkan, menghapus, atau memperbarui elemen dalam list, sehingga perubahan yang dilakukan langsung memengaruhi struktur data yang ada.
+
 > Output
-> ![Screenshot bagian x](output/guided1.png)
+> ![Screenshot bagian x](output/guided.png)
 
 ```cpp
 #include <iostream>
