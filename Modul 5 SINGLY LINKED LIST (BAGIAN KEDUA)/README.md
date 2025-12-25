@@ -207,7 +207,146 @@ Buatlah single linked list untuk Antrian yang menyimpan data pembeli( nama dan p
 
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Node {
+    string nama;
+    string pesanan;
+    Node *next;
+};
+
+Node *front = NULL;
+Node *rear = NULL;
+
+void tambahAntrian() {
+    Node *baru = new Node;
+
+    cout << "Masukkan nama pembeli   : ";
+    cin.ignore();
+    getline(cin, baru->nama);
+
+    cout << "Masukkan pesanan        : ";
+    getline(cin, baru->pesanan);
+
+    baru->next = NULL;
+
+    if (front == NULL) {
+        front = rear = baru;
+    } else {
+        rear->next = baru;
+        rear = baru;
+    }
+
+    cout << "Pembeli berhasil ditambahkan ke antrian.\n";
+}
+
+void layaniAntrian() {
+    if (front == NULL) {
+        cout << "Antrian kosong.\n";
+        return;
+    }
+
+    Node *hapus = front;
+    cout << "Melayani pembeli: " << hapus->nama
+         << " | Pesanan: " << hapus->pesanan << endl;
+
+    front = front->next;
+    delete hapus;
+
+    if (front == NULL) {
+        rear = NULL;
+    }
+}
+
+void tampilkanAntrian() {
+    if (front == NULL) {
+        cout << "Antrian kosong.\n";
+        return;
+    }
+
+    Node *bantu = front;
+    int nomor = 1;
+
+    cout << "\nDaftar Antrian Pembeli:\n";
+    while (bantu != NULL) {
+        cout << nomor << ". "
+             << bantu->nama
+             << " - " << bantu->pesanan << endl;
+        bantu = bantu->next;
+        nomor++;
+    }
+}
+
+void cariPembeli() {
+    if (front == NULL) {
+        cout << "Antrian kosong.\n";
+        return;
+    }
+
+    string cariNama;
+    cout << "Masukkan nama pembeli yang dicari: ";
+    cin.ignore();
+    getline(cin, cariNama);
+
+    Node *bantu = front;
+    int posisi = 1;
+    bool ditemukan = false;
+
+    while (bantu != NULL) {
+        if (bantu->nama == cariNama) {
+            cout << "Pembeli ditemukan!\n";
+            cout << "Nama    : " << bantu->nama << endl;
+            cout << "Pesanan : " << bantu->pesanan << endl;
+            cout << "Posisi antrian ke-" << posisi << endl;
+            ditemukan = true;
+            break;
+        }
+        bantu = bantu->next;
+        posisi++;
+    }
+
+    if (!ditemukan) {
+        cout << "Pembeli dengan nama \"" << cariNama << "\" tidak ditemukan.\n";
+    }
+}
+
+int main() {
+    int pilihan;
+
+    do {
+        cout << "\n=== MENU ANTRIAN PEMBELI ===\n";
+        cout << "1. Tambah Antrian\n";
+        cout << "2. Layani Antrian\n";
+        cout << "3. Tampilkan Antrian\n";
+        cout << "4. Cari Pembeli\n";
+        cout << "5. Keluar\n";
+        cout << "Pilih menu: ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1:
+                tambahAntrian();
+                break;
+            case 2:
+                layaniAntrian();
+                break;
+            case 3:
+                tampilkanAntrian();
+                break;
+            case 4:
+                cariPembeli();
+                break;
+            case 5:
+                cout << "Program selesai.\n";
+                break;
+            default:
+                cout << "Pilihan tidak valid.\n";
+        }
+    } while (pilihan != 5);
+
+    return 0;
+}
 ```
 
 > Output
@@ -217,14 +356,14 @@ Buatlah single linked list untuk Antrian yang menyimpan data pembeli( nama dan p
 
 ### Soal 2
 
-Buatlah program kode untuk membalik (reverse) singly linked list (1-2-3 menjadi 3-2-1) 
+Gunakan latihan pada pertemuan minggu ini dan tambahkan searching untuk mencari buku berdasarkan judul, penulis, dan ISBN!
 
 ```cpp
 
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided1.png)
+> ![Screenshot bagian x](output/unguided2.png)
 
 > Penjelasan
 
