@@ -20,7 +20,7 @@ Linked List merupakan salah satu struktur data dinamis yang tersusun atas sekump
 
 3. Singly Linked List
 
-Singly Linked List adalah jenis linked list yang setiap nodenya hanya memiliki satu pointer yang menunjuk ke node berikutnya.
+Singly Linked List adalah jenis linked list yang setiap nodenya hanya memiliki satu pointer yang menunjuk ke node berikutnya. 
 
 Karakteristik Singly Linked List:
 
