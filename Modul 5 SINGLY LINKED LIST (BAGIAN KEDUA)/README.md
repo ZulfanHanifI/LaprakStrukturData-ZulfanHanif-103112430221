@@ -543,6 +543,63 @@ void perbaruiBuku(string isbn) {
     cout << "Buku dengan ISBN " << isbn << " tidak ditemukan.\n";
 }
 
+void cariBukuISBN(string isbn) {
+    Buku* temp = head;
+
+    while (temp != NULL) {
+        if (temp->isbn == isbn) {
+            cout << "\nBuku ditemukan!\n";
+            cout << "ISBN    : " << temp->isbn << endl;
+            cout << "Judul   : " << temp->judul << endl;
+            cout << "Penulis : " << temp->penulis << endl;
+            return;
+        }
+        temp = temp->next;
+    }
+    cout << "Buku dengan ISBN tersebut tidak ditemukan.\n";
+}
+
+void cariBukuJudul(string judul) {
+    Buku* temp = head;
+    bool ditemukan = false;
+
+    while (temp != NULL) {
+        if (temp->judul == judul) {
+            cout << "\nBuku ditemukan!\n";
+            cout << "ISBN    : " << temp->isbn << endl;
+            cout << "Judul   : " << temp->judul << endl;
+            cout << "Penulis : " << temp->penulis << endl;
+            ditemukan = true;
+        }
+        temp = temp->next;
+    }
+
+    if (!ditemukan) {
+        cout << "Buku dengan judul tersebut tidak ditemukan.\n";
+    }
+}
+
+void cariBukuPenulis(string penulis) {
+    Buku* temp = head;
+    bool ditemukan = false;
+
+    while (temp != NULL) {
+        if (temp->penulis == penulis) {
+            cout << "\nBuku ditemukan!\n";
+            cout << "ISBN    : " << temp->isbn << endl;
+            cout << "Judul   : " << temp->judul << endl;
+            cout << "Penulis : " << temp->penulis << endl;
+            ditemukan = true;
+        }
+        temp = temp->next;
+    }
+
+    if (!ditemukan) {
+        cout << "Buku dengan penulis tersebut tidak ditemukan.\n";
+    }
+}
+
+
 // fungsi utama (menu interaktif)
 int main() {
     int pilihan;
@@ -554,7 +611,11 @@ int main() {
         cout << "2. Tampilkan Buku\n";
         cout << "3. Hapus Buku\n";
         cout << "4. Perbarui Buku\n";
-        cout << "5. Keluar\n";
+        cout << "5. Cari Buku (ISBN)\n";
+        cout << "6. Cari Buku (Judul)\n";
+        cout << "7. Cari Buku (Penulis)\n";
+        cout << "8. Keluar\n";
+
         cout << "Pilih menu: ";
         cin >> pilihan;
         cin.ignore(); // membersihkan buffer agar getline bisa digunakan
@@ -583,12 +644,27 @@ int main() {
             perbaruiBuku(isbn);
             break;
         case 5:
+            cout << "Masukkan ISBN yang dicari: ";
+            getline(cin, isbn);
+            cariBukuISBN(isbn);
+            break;
+            case 6:
+        cout << "Masukkan Judul yang dicari: ";
+            getline(cin, judul);
+            cariBukuJudul(judul);
+            break;
+        case 7:
+            cout << "Masukkan Penulis yang dicari: ";
+            getline(cin, penulis);
+            cariBukuPenulis(penulis);
+            break;
+        case 8:
             cout << "Program selesai.\n";
             break;
         default:
             cout << "Pilihan tidak valid!\n";
         }
-    } while (pilihan != 5);
+    } while (pilihan != 8);
 
     return 0;
 }
