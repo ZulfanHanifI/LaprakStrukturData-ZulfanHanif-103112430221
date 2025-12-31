@@ -128,7 +128,9 @@ int main()
 
 ## Unguided
 
-### Soal 1
+### Soal 2
+
+Buat multilist.cpp untuk implementasi semua fungsi pada multilist.h. Buat main.cpp untuk pemanggilan fungsi-fungsi tersebut
 
 ```cpp
 
@@ -139,7 +141,42 @@ int main()
 
 > Penjelasan
 
-### Soal 2
+### Soal 3
+
+Buatlah ADT Multi Linked list sebagai berikut di dalam file “circularlist.h”:
+```
+Type infotype : mahasiswa <
+    Nama:string
+    Nim:string
+    Jenis_kelamin:char
+    Ipk:float>
+Type address : pointer to ElmList
+Type ElmList <
+    info : infotype
+    next :address>
+Type List <
+    First : address>
+```
+Terdapat 11 fungsi/prosedur untuk ADT circularlist
+procedure CreateList( input/output L : List )
+function alokasi( x : infotype ) → address
+procedure dealokasi( input/output t P : address )
+procedure insertFirst( input/output L : List, input P : address )
+procedure insertAfter( input/output L : List, input Prec : address, P : address)
+procedure insertLast( input/output L : List, input P : address )
+procedure deleteFirst( input/output L : List, input/output P : address )
+procedure deleteAfter( input/output L : List, input Prec : address,
+input/output t P : address )
+procedure deleteLast( input/output L : List, P : address )
+function findElm( L : List, x : infotype ) → address
+procedure printInfo( input L : List )
+
+Buatlah implementasi ADT Doubly Linked list pada file “circularlist.cpp”. Tambahkan fungsi/prosedur berikut pada file “main.cpp”.
+
+fungsi create ( in nama, nim : string, jenis_kelamin : char, ipk : float)
+fungsi disediakan, ketik ulang code yang diberikan
+fungsi mengalokasikan sebuah elemen list dengan info sesuai input
+
 
 ```cppp
 
